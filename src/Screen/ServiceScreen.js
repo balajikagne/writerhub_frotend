@@ -13,7 +13,7 @@ function ServiceScreen() {
           <div className="service_heading">Find Your Service Here</div>
           <div className="service_content">
             <div className="service_content_box">
-            <a href="/notes"><img src={service4}></img></a>
+            <a href="/universities"><img src={service4}></img></a>
             <h2>Notes and Material</h2>
             </div>
             <div className="service_content_box">
