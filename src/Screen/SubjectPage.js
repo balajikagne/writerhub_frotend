@@ -17,7 +17,7 @@ function SubjectPage() {
 
   const handleBuy = (subject) => {
     // alert(`Buying ${subject.name}`); // Replace this with actual buy logic
-    navigate('/order');
+    navigate('/detailsform');
   };
 useEffect(() => {
     if (!selectedUniversity) {

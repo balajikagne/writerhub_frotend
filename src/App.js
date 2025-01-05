@@ -24,6 +24,7 @@ import UniversityPage from './Screen/UniversityPage';
 import DepartmentPage from './Screen/DepartmentPage';
 import YearPage from './Screen/YearPage';
 import SubjectPage from './Screen/SubjectPage';
+import DetailScreen from './Screen/DetailScreen';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -47,7 +48,8 @@ function App() {
               <Route path="/notes" element={<ComingSoon />} />
               <Route path="/preview" element={<ComingSoon />} />
               <Route path="/form" element={<FormFillup />} />
-              <Route path="/payment" element={<ComingSoon />} />
+              <Route path="/detailsform" element={<DetailScreen />} />
+              <Route path="/payment" element={<PaymentScreen />} />
               <Route path="/contactus" element={<ContactUsForm />} />
               <Route path="/project" element={<ComingSoon />} />
               <Route path="/cse/projects" element={<ComingSoon />} />

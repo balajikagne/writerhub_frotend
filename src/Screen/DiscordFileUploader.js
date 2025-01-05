@@ -20,21 +20,22 @@ function DiscordFileUploader({ data, setUploadStatus }) {
 
   const handleUpload = async (event) => {
     event.preventDefault(); // Prevent form submission on upload button click
-
+  
     if (!file) {
       setLocalUploadStatus("Please select a file first.");
       return;
     }
-
+  
     const formData = new FormData();
     formData.append("file", file, file.name);
-    formData.append("content", `Assignment Details:\nName: ${data.name}\nMobile Number: ${data.mobileNumber}\nAddress: ${data.address}\nNumber of Assignments: ${data.numberOfAssignments}\nDays: ${data.days}`);
-
+    formData.append(
+      "content",
+      `Assignment Details:\nName: ${data.name}\nMobile Number: ${data.mobileNumber}\nAddress: ${data.address}\nNumber of Assignments: ${data.numberOfAssignments}\nDays: ${data.days}`
+    );
+  
     try {
       setLocalUploadStatus("Uploading...");
-      const response = await axios.post(WEBHOOK_URL, formData,{headers:{
-        "Content-Type": "application/json",
-      }});
+      const response = await axios.post(WEBHOOK_URL, formData); // Remove the headers object here
       if (response.status === 200) {
         setLocalUploadStatus("File uploaded successfully!");
         setUploadStatus(true); // Notify FormFillup that the file is uploaded
@@ -48,6 +49,7 @@ function DiscordFileUploader({ data, setUploadStatus }) {
       console.error("Upload Error:", error);
     }
   };
+  
 
   return (
     <div style={styles.container}>
