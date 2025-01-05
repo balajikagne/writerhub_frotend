@@ -28,7 +28,7 @@ function Footer() {
 
 We offer a seamless, user-friendly experience where you can easily find and hire top-tier professionals for every stage of your project. With a focus on quality, reliability, and customer satisfaction, we ensure that each service provided is tailored to meet your specific goals and objectives.
 
-Our platform empowers both service seekers and providers, creating a community where collaboration and innovation thrive. No matter the size of your project, we have the resources and expertise to help you succeed. Start your journey today with [Your Company Name] – the trusted platform for all your service needs.</div>
+Our platform empowers both service seekers and providers, creating a community where collaboration and innovation thrive. No matter the size of your project, we have the resources and expertise to help you succeed. Start your journey today with writerhub – the trusted platform for all your service needs.</div>
     </div>
   )
 }
