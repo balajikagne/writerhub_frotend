@@ -1,0 +1,182 @@
+@media (min-width:769px)
+{
+    .nav_container{
+        width: 95%;
+        height: 100px;
+        /* background-color: rgba(255, 255, 255, 0.8); */
+        /* backdrop-filter: blur(10px); */
+        display: flex;
+        position: sticky;
+        top:0px;
+        z-index: 2;
+    }
+    .container_logo{
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container_logo >a > img{
+        height: 50px;
+        width: 180px;
+    }
+    .btn_container{
+        width: 86%;
+        display: flex;
+        justify-content: end;
+    }
+    .btn_inner_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .btn_inner_container > li:hover {
+        border-bottom: 2px solid black;
+        transition: border-bottom;
+    }
+    
+    .btn_inner_container > li > a{
+       font-size: 1.2rem; 
+       text-decoration: none;
+       color:#ffffff;
+    }
+    .btn_container2{
+        display:none;
+    }
+    .btn_container3{
+        display: none;
+    }
+}
+@media (max-width:768px)
+{
+    .nav_container{
+        width: 100%;
+        height: 100px;
+        display: flex;
+        position: sticky;
+        top:0px;
+        z-index: 2;
+    }
+    .container_logo{
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-left: 10px;
+    }
+    .container_logo > a>img{
+        height: 50px;
+        width: 130px;
+    }
+    .btn_container{
+        display: none;
+    }
+    .btn_container2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        height: 100px;
+    }
+
+    .before_click{
+        height: 44px;
+        width: 46px;
+    }
+    .before_click >p{
+        width: 30px;
+        height: 1px;
+        font-size: 0.5rem;
+        margin: 7px;
+        background-color: rgb(255, 255, 255);
+    }
+    .after_click{
+        height: 44px;
+        width: 46px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .after_click>i{
+        color: #ffffff;
+        transition: ease-in-out;
+        transition-duration: 3s;
+        transition-timing-function: step-start;
+    }
+    .btn_container3{
+        height: 250px;
+        width: 100%;
+        position: sticky;
+        top: 100px;
+        z-index:2;
+        transition: linear;
+        animation-name: menubar;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out
+    }
+    @keyframes menubar {
+        from {
+            height: 0px;
+            width: 100%;
+            position: sticky;
+            top: 100px;
+            z-index:3;
+            opacity: 0;
+        }
+        to{
+            height: 300px;
+        width: 100%;
+        position: sticky;
+        top: 100px;
+        z-index:3;
+        transition: linear;
+        }
+    }
+    .btn_after_click {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn_after_click > ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn_inner_container{
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+    }
+    
+    /* .logo_in_menu > ul{
+        display: flex;
+    } */
+    .logo_in_menu {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .logo_in_menu > a{
+        height: 40px;
+        width: 40px;
+        text-align: center;
+    }
+    .btn_inner_container > a:hover {
+        border-bottom: 2px solid black;
+        transition: border-bottom;
+    }
+    .btn_inner_container > a{
+        cursor: pointer;
+        text-align: center;
+        font-size: 1.2rem; 
+        text-decoration: none;
+        color:#ffffff;
+    }
+   
+}

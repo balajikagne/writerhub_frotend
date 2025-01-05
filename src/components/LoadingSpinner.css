@@ -1,0 +1,19 @@
+/* LoadingSpinner.css */
+
+/* Ensure the loading container fills the screen */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Adjust Lottie container styling */
+  .lottie-animation {
+    z-index: 1;
+  }
+  

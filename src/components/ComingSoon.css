@@ -1,0 +1,43 @@
+/* 
+.coming-soon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffefd5, #f08080);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.content-wrapper {
+  text-align: center;
+  color: #333;
+}
+
+h1 {
+  font-size: 3em;
+  color: #ff6347;
+}
+
+p {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.anime-character img {
+  width: 200px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.countdown-text {
+  font-size: 1.2em;
+  margin-top: 20px;
+  color: #555;
+}
+
+.countdown-timer {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ff4500;
+  margin-top: 10px;
+} */

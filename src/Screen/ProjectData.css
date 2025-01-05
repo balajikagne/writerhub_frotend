@@ -1,0 +1,132 @@
+/* ProjectData.css */
+
+.searchFilterRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.searchInput {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 20%;
+  min-width: 200px;
+}
+
+.filterSelect {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 20%;
+  min-width: 120px;
+}
+
+.searchButton {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  width: 15%;
+  min-width: 100px;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+  margin: 20px;
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.headline {
+  font-size: 1.5em;
+  margin: 20px 0 10px 0;
+}
+.headline1 {
+  font-size: 1.2em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.description {
+  font-size: 1em;
+  color: #555;
+  margin: 0 15px 20px 15px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+}
+
+.outer_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .searchFilterRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchInput {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .filterSelect {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .searchButton {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
