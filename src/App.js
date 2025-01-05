@@ -58,10 +58,10 @@ function App() {
               <Route path="/jobs" element={<ComingSoon />} />
               <Route path="/apply" element={<ComingSoon />} />
               <Route path="/writeup/description" element={<ComingSoon />} />
-              <Route path="/universities" element={<ComingSoon />} />
-              <Route path="/departments" element={<ComingSoon />} />
-              <Route path="/years" element={<ComingSoon />} />
-              <Route path="/subjects" element={<ComingSoon />} />
+              <Route path="/universities" element={<UniversityPage />} />
+              <Route path="/departments" element={<DepartmentPage />} />
+              <Route path="/years" element={<YearPage />} />
+              <Route path="/subjects" element={<SubjectPage />} />
             </Routes>
             <Footer />
           </Router>
