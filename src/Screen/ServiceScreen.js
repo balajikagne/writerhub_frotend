@@ -2,9 +2,10 @@ import React from "react";
 import "./ServiceScreen.css";
 import service from "../assets/content_c-Photoroom.png"
 import service1 from "../assets/Designer-Photoroom.png"
-import service2 from "../assets/Design-Photoroom.png"
+import service2 from "../assets/internship_logo.png"
 import service3 from "../assets/project_c-Photoroom.png"
 import service4 from "../assets/notes_c-Photoroom.png"
+import service5 from "../assets/Design-Photoroom.png"
 function ServiceScreen() {
   return (
     <>
@@ -17,18 +18,21 @@ function ServiceScreen() {
             <h2>Notes and Material</h2>
             </div>
             <div className="service_content_box">
+            <a href="/apply"><img src={service2}></img></a>
+            <h2>internships</h2>
+            </div>
+            <div className="service_content_box">
             <a href="/writeup/description"><img src={service1}></img></a>
             <h2>Assignments</h2>
             </div>
             <div className="service_content_box">
-            <a href="/cm"><img src={service2}></img></a>
+            <a href="/cm"><img src={service5}></img></a>
             <h2>Ms-office Service</h2>
             </div>
             <div className="service_content_box">
             <a href="/project"><img src={service3}></img></a>
             <h2>Project Services</h2>
             </div>
-            
           </div>
         </div>
         <div className="service_section_con2"></div>

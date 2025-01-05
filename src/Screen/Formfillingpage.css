@@ -1,0 +1,79 @@
+.internship-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: "Arial", sans-serif;
+  }
+  
+  .internship-form div {
+    margin-bottom: 15px;
+  }
+  
+  .internship-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .internship-form input,
+  .internship-form select,
+  .internship-form textarea,
+  .internship-form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .internship-form textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  .internship-form input[type="file"] {
+    padding: 5px;
+  }
+  
+  .internship-form button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .internship-form button:hover {
+    background: #0056b3;
+  }
+  
+  .internship-form .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .internship-form h2 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .internship-form .success-message {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .internship-form input:focus,
+  .internship-form select:focus,
+  .internship-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+  

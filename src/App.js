@@ -25,6 +25,8 @@ import DepartmentPage from './Screen/DepartmentPage';
 import YearPage from './Screen/YearPage';
 import SubjectPage from './Screen/SubjectPage';
 import DetailScreen from './Screen/DetailScreen';
+import InternshipScreen from './Screen/InternshipScreen';
+import FormFillingPage from './Screen/FormFillingPage';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,7 +50,7 @@ function App() {
               <Route path="/notes" element={<ComingSoon />} />
               <Route path="/preview" element={<ComingSoon />} />
               <Route path="/form" element={<FormFillup />} />
-              <Route path="/detailsform" element={<DetailScreen />} />
+              <Route path="/detailsform" element={<ComingSoon/>} />
               <Route path="/payment" element={<PaymentScreen />} />
               <Route path="/contactus" element={<ContactUsForm />} />
               <Route path="/project" element={<ComingSoon />} />
@@ -58,12 +60,14 @@ function App() {
               <Route path="*" element={<NotFound />} />
               <Route path="/it/projects" element={<ProjectData />} />
               <Route path="/jobs" element={<ComingSoon />} />
-              <Route path="/apply" element={<ComingSoon />} />
+              {/* <Route path="/apply" element={<ComingSoon />} /> */}
               <Route path="/writeup/description" element={<ComingSoon />} />
               <Route path="/universities" element={<UniversityPage />} />
               <Route path="/departments" element={<DepartmentPage />} />
               <Route path="/years" element={<YearPage />} />
               <Route path="/subjects" element={<SubjectPage />} />
+              <Route path="/apply" element={<InternshipScreen />} />
+              <Route path="/formfillup" element={<FormFillingPage />} />
             </Routes>
             <Footer />
           </Router>
