@@ -20,7 +20,7 @@ function NavBar() {
               <a href="/Service">Services</a>
             </li>
             <li>
-              <a href="/jobs">Jobs</a>
+              <a href="/apply">Jobs</a>
             </li>
             <li>
               <a href="/contactus">Contact</a>
