@@ -1,18 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
-import betechnos_logo from "../assets/betechnos_logo.png"
+import { useNavigate } from "react-router-dom";
+import betechnos_logo from "../assets/betechnos_logo.png";
+
 function InternshipScreen() {
   const navigate = useNavigate();
 
   const handleApplyClick = () => {
-    navigate("/formfillup");
+    navigate("/formfillup", { state: { scrollToTop: true } }); // Pass state to trigger scrolling
   };
 
   return (
     <div style={styles.container}>
       <h1 style={styles.heading}>Betechnos Internship Registration</h1>
       <img
-        src={betechnos_logo} 
+        src={betechnos_logo}
         alt="Internship Banner"
         style={styles.image}
       />

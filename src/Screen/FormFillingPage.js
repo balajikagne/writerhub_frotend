@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState , useRef, useEffect} from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import "./Formfillingpage.css"
 import paymentqr from "../assets/SAMIT_QR.jpg";
+import { useLocation } from "react-router-dom";
 const WEBHOOK_URL = "https://discord.com/api/webhooks/1325410724050112624/DehVrnDC9nwcPHjftmOEoTg7qNl1ubyrOaSeIkwbDIMv23ut7cgC5wgB-s0AktJI_5hP";
 function FormFillingPage() {
+  const formRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollToTop && formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [location.state]);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -116,7 +125,7 @@ function FormFillingPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="internship-form">
+    <form ref={formRef} onSubmit={handleSubmit} className="internship-form">
       <div>
         <label>Name *</label>
         <input
