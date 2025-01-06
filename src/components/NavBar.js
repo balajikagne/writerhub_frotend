@@ -75,7 +75,7 @@ function NavBar() {
                 <a href="/">Home</a>
 
                 <a href="/Service">Services</a>
-                <a href="/jobs">Jobs</a>
+                <a href="/apply">Jobs</a>
                 <a href="/contactus">Contact</a>
 
                 <a href="/about">About</a>
