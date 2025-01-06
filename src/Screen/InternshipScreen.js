@@ -11,7 +11,7 @@ function InternshipScreen() {
 
   return (
     <div style={styles.container}>
-      <div style={styles.card}> {/* Smaller card wrapper */}
+      <div style={styles.card}>
         <img
           src={betechnos_logo}
           alt="Internship Banner"
@@ -60,25 +60,30 @@ const styles = {
   },
   card: {
     display: "flex",
-    backgroundColor: "#f5f5f5", // Light gray background
+    backgroundColor: "#f5f5f5",
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
     gap: "20px",
-    width: "80%", // Smaller card width
+    width: "90%",
     maxWidth: "800px",
     padding: "10px",
     borderRadius: "5px",
-    border: "1px solid #ddd", // Light border for definition
+    border: "1px solid #ddd",
+    boxSizing: "border-box", // Ensure padding is included in width
+    flexWrap: "wrap", // Allow wrapping on smaller devices
   },
   image: {
     width: "150px",
     height: "auto",
     borderRadius: "5px",
+    flexShrink: 0, // Prevent image from shrinking
   },
   details: {
     display: "flex",
     flexDirection: "column",
     flex: 1,
+    textAlign: "left",
   },
   heading: {
     fontSize: "1.5rem",
@@ -91,7 +96,6 @@ const styles = {
     color: "#555",
   },
   list: {
-    textAlign: "left",
     margin: "0",
     paddingLeft: "20px",
     fontSize: "1rem",
@@ -106,6 +110,21 @@ const styles = {
     borderRadius: "5px",
     cursor: "pointer",
     marginTop: "10px",
+    alignSelf: "flex-start", // Align button to the left
+  },
+  // Add responsive styles for smaller devices
+  "@media (max-width: 600px)": {
+    card: {
+      flexDirection: "column", // Stack items vertically on small screens
+      textAlign: "center", // Center-align text for better readability
+    },
+    image: {
+      width: "100px", // Smaller image for small screens
+      marginBottom: "10px",
+    },
+    button: {
+      alignSelf: "center", // Center the button on small screens
+    },
   },
 };
 
