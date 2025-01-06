@@ -27,6 +27,7 @@ import SubjectPage from './Screen/SubjectPage';
 import DetailScreen from './Screen/DetailScreen';
 import InternshipScreen from './Screen/InternshipScreen';
 import FormFillingPage from './Screen/FormFillingPage';
+import PaymentDetails from './Screen/PaymentDetails';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -53,7 +54,7 @@ function App() {
               <Route path="/detailsform" element={<ComingSoon/>} />
               <Route path="/payment" element={<PaymentScreen />} />
               <Route path="/contactus" element={<ContactUsForm />} />
-              <Route path="/project" element={<ComingSoon />} />
+              <Route path="/project" element={<ProjectData />} />
               <Route path="/cse/projects" element={<ComingSoon />} />
               <Route path="/ai" element={<ComingSoon />} />
               <Route path="/cm" element={<ComingSoon />} />
@@ -68,6 +69,7 @@ function App() {
               <Route path="/subjects" element={<SubjectPage />} />
               <Route path="/apply" element={<InternshipScreen />} />
               <Route path="/formfillup" element={<FormFillingPage />} />
+              <Route path="/orderdetails" element={<PaymentDetails />} />
             </Routes>
             <Footer />
           </Router>

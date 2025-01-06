@@ -115,7 +115,7 @@ function ProjectData() {
                   <button onClick={() => openPopup(card)} className="button">
                     Description
                   </button>
-                  <a href="/payment" className="button">
+                  <a href="/orderdetails" className="button">
                     Buy
                   </a>
                 </div>

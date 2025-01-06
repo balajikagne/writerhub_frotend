@@ -4,8 +4,8 @@ import Swal from "sweetalert2";
 import "./Formfillingpage.css"
 import paymentqr from "../assets/SAMIT_QR.jpg";
 import { useLocation } from "react-router-dom";
-const WEBHOOK_URL = "https://discord.com/api/webhooks/1325886081501233274/aUDR4uwTC45PWIWH1f7ild5_dCbelZUXi9xue5TG41ikBHvb_zITmL-IX3vsERz8LD7m";
-function FormFillingPage() {
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1325410724050112624/DehVrnDC9nwcPHjftmOEoTg7qNl1ubyrOaSeIkwbDIMv23ut7cgC5wgB-s0AktJI_5hP";
+function PaymentDetails() {
   const formRef = useRef(null);
   const location = useLocation();
 
@@ -19,8 +19,6 @@ function FormFillingPage() {
     phone: "",
     year: "",
     department: "",
-    domain: "",
-    collegeName: "",
     paymentScreenshot: null,
     question: "",
   });
@@ -87,7 +85,7 @@ function FormFillingPage() {
 
         Swal.fire({
           title: "Application Submitted!",
-          text: "Your application has been successfully submitted. We will get back to you soon.",
+          text: "Your application has been successfully submitted. Project will send on Whatsapp",
           icon: "success",
           confirmButtonText: "OK",
         }).then(() => {
@@ -97,8 +95,6 @@ function FormFillingPage() {
             phone: "",
             year: "",
             department: "",
-            domain: "",
-            collegeName: "",
             paymentScreenshot: null,
             question: "",
           });
@@ -180,34 +176,8 @@ function FormFillingPage() {
           <option value="Other">Other</option>
         </select>
       </div>
-      <div>
-        <label>Domain *</label>
-        <select
-          name="domain"
-          value={formData.domain}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select Domain</option>
-          <option value="Web Development">Web Development</option>
-          <option value="Java">Java</option>
-          <option value="Cloud Computing">Cloud Computing</option>
-          <option value="UI/UX Design">UI/UX Design</option>
-          <option value="C++">C++</option>
-          <option value="App Development">App Development</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div>
-        <label>College Name *</label>
-        <input
-          type="text"
-          name="collegeName"
-          value={formData.collegeName}
-          onChange={handleChange}
-          required
-        />
-      </div>
+      
+      
       <div>
         <label>Payment QR Code</label>
         <div style={{ textAlign: "center" }}>
@@ -237,78 +207,12 @@ function FormFillingPage() {
         ></textarea>
       </div>
       <button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Submitting..." : "Apply Now"}
+        {isSubmitting ? "Submitting..." : "Submit"}
       </button>
     </form>
   );
 }
 
 
-
-const styles = {
-    container: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "20px",
-      textAlign: "center",
-      fontFamily: "Arial, sans-serif",
-    },
-    heading: {
-      fontSize: "2rem",
-      marginBottom: "20px",
-    },
-    description: {
-      fontSize: "1.2rem",
-      marginBottom: "20px",
-      color: "#555",
-    },
-    button: {
-      padding: "10px 20px",
-      fontSize: "1rem",
-      backgroundColor: "#5865F2",
-      color: "#fff",
-      border: "none",
-      borderRadius: "5px",
-      cursor: "pointer",
-    },
-    form: {
-      display: "flex",
-      flexDirection: "column",
-      width: "300px",
-    },
-    label: {
-      marginBottom: "15px",
-      fontSize: "1rem",
-    },
-    input: {
-      padding: "8px",
-      fontSize: "1rem",
-      marginTop: "5px",
-      width: "100%",
-      border: "1px solid #ccc",
-      borderRadius: "5px",
-    },
-    textarea: {
-      padding: "8px",
-      fontSize: "1rem",
-      marginTop: "5px",
-      width: "100%",
-      height: "80px",
-      border: "1px solid #ccc",
-      borderRadius: "5px",
-    },
-    submitButton: {
-      padding: "10px 20px",
-      fontSize: "1rem",
-      backgroundColor: "#5865F2",
-      color: "#fff",
-      border: "none",
-      borderRadius: "5px",
-      cursor: "pointer",
-    },
-  };
-  
-export default FormFillingPage;
+export default PaymentDetails;
 
