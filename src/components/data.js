@@ -1,6 +1,7 @@
 import sppu from "../assets/sppu-pic.png";
 import fy from "../assets/fy-logo.png";
-
+import betechnos from "../assets/betechnos_logo.png"
+import part_1_assi from "../assets/part_ass_1.jpg"
 export const data = {
   UniversityA: {
     image: sppu,
@@ -63,11 +64,12 @@ export const data = {
     },
   },
   Assignments: {
-    image: sppu,
+    image: betechnos,
     departments: {
-      FE: {
-        image: fy,
+      Assignment_1: {
+        image: part_1_assi,
         years: {
+
         }
       },
     },
