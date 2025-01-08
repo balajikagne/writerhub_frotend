@@ -2,7 +2,7 @@ import React, { useState , useRef, useEffect} from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import "./Formfillingpage.css"
-import paymentqr from "../assets/SAMIT_QR.jpg";
+import paymentqr from "../assets/deepak_qr.jpg";
 import { useLocation } from "react-router-dom";
 const WEBHOOK_URL = "https://discord.com/api/webhooks/1325410724050112624/DehVrnDC9nwcPHjftmOEoTg7qNl1ubyrOaSeIkwbDIMv23ut7cgC5wgB-s0AktJI_5hP";
 function PaymentDetails() {
