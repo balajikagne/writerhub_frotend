@@ -62,4 +62,14 @@ export const data = {
       },
     },
   },
+  Assignments: {
+    image: sppu,
+    departments: {
+      FE: {
+        image: fy,
+        years: {
+        }
+      },
+    },
+  },
 };
