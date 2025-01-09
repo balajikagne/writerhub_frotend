@@ -63,15 +63,21 @@ export const data = {
       },
     },
   },
-  Assignments: {
-    image: betechnos,
-    departments: {
-      Assignment_1: {
-        image: part_1_assi,
-        years: {
+  
+};
 
-        }
+export const data1 = [
+  {
+    image: betechnos,
+    name: "Main Item",
+    subObject: {
+      image: part_1_assi,
+      name: "Notes",
+      description: "Frontend ( html,css and javascript )",
+      buttons: {
+        actionButton: "Preview",
+        buyButton: "Buy Now",
       },
     },
   },
-};
+];
