@@ -29,6 +29,7 @@ import InternshipScreen from './Screen/InternshipScreen';
 import FormFillingPage from './Screen/FormFillingPage';
 import PaymentDetails from './Screen/PaymentDetails';
 import BetechnosNotes from './Screen/BetechnosNotes';
+import MaterialForm from './Screen/MaterialForm';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -71,6 +72,7 @@ function App() {
               <Route path="/apply" element={<InternshipScreen />} />
               <Route path="/formfillup" element={<FormFillingPage />} />
               <Route path="/orderdetails" element={<PaymentDetails />} />
+              <Route path="/notes/orderdetails" element={<MaterialForm />} />
               <Route path="/betechnos/notes" element={<BetechnosNotes />} />
             </Routes>
             <Footer />

@@ -8,7 +8,7 @@ function BetechnosNotes() {
 
   // Function for handling the 'Buy Now' action
   const buynow = () => {
-    navigate("/orderdetails")
+    navigate("/notes/orderdetails")
   };
 
   useEffect(() => {
