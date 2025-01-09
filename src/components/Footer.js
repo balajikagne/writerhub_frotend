@@ -10,7 +10,7 @@ function Footer() {
             </div>
             <div className='social_connection12'>
                 <ul>
-                    <li> <a className='btn_social' href='https://www.linkedin.com/company/writerhub24/about/?viewAsMember=true'style={{fontSize:"1rem",textDecoration:"none"}}>Home</a></li>
+                    <li> <a className='btn_social' href='/'style={{fontSize:"1rem",textDecoration:"none"}}>Home</a></li>
                     <li><a  className='btn_social'href='https://www.instagram.com/writerhub.in/'style={{fontSize:"1rem",textDecoration:"none"}}>Service</a></li>
                     <li><a  className='btn_social'href='/jobs'style={{fontSize:"1rem",textDecoration:"none"}}>Jobs</a></li>
                     <li><a  className='btn_social'href='/contact'style={{fontSize:"1rem",textDecoration:"none"}}>About</a></li>
@@ -19,7 +19,7 @@ function Footer() {
                 <ul>
                     <li><a className="btn_social" href='https://www.linkedin.com/company/writerhub24/about/?viewAsMember=true'><i class="fa-brands fa-linkedin" style={{fontSize:"1.5rem",fontWeight:"1rem",marginLeft:"-30px"}}></i></a></li>
                     <li><a className="btn_social" href='https://www.instagram.com/writerhub.in/'><i class="fa-brands fa-instagram" style={{fontSize:"1.5rem",fontWeight:"1rem",marginLeft:"-30px"}}></i></a></li>
-                    <li><a className="btn_social" href='/contact'><i class="fa-brands fa-whatsapp" style={{fontSize:"1.5rem",fontWeight:"1rem",marginLeft:"-30px"}}></i></a></li>
+                    <li><a className="btn_social" href='https://wa.link/kv93vv'><i class="fa-brands fa-whatsapp" style={{fontSize:"1.5rem",fontWeight:"1rem",marginLeft:"-30px"}}></i></a></li>
                     <li><a className="btn_social" href='/about'><i class="fa-brands fa-x" style={{fontSize:"1.5rem",fontWeight:"1rem",marginLeft:"-30px"}}></i></a></li>
                 </ul>
             </div>

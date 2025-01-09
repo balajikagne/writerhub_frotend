@@ -82,7 +82,7 @@ function NavBar() {
               </div>
             </div>
             <div className="logo_in_menu">
-              <a href="">
+              <a href="https://www.linkedin.com/company/writerhub24/about/?viewAsMember=true">
                 <i
                   class="fa-brands fa-linkedin"
                   style={{
@@ -90,7 +90,7 @@ function NavBar() {
                   }}
                 ></i>
               </a>
-              <a href="">
+              <a href="https://www.instagram.com/writerhub.in/">
                 <i
                   class="fa-brands fa-instagram"
                   style={{
@@ -98,7 +98,7 @@ function NavBar() {
                   }}
                 ></i>
               </a>
-              <a href="">
+              <a href="https://wa.link/kv93vv">
                 <i
                   class="fa-brands fa-whatsapp"
                   style={{
