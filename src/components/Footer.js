@@ -11,7 +11,7 @@ function Footer() {
             <div className='social_connection12'>
                 <ul>
                     <li> <a className='btn_social' href='/'style={{fontSize:"1rem",textDecoration:"none"}}>Home</a></li>
-                    <li><a  className='btn_social'href='https://www.instagram.com/writerhub.in/'style={{fontSize:"1rem",textDecoration:"none"}}>Service</a></li>
+                    <li><a  className='btn_social'href='/service'style={{fontSize:"1rem",textDecoration:"none"}}>Service</a></li>
                     <li><a  className='btn_social'href='/jobs'style={{fontSize:"1rem",textDecoration:"none"}}>Jobs</a></li>
                     <li><a  className='btn_social'href='/contact'style={{fontSize:"1rem",textDecoration:"none"}}>About</a></li>
                     <li><a  className='btn_social'href='/about'style={{fontSize:"1rem",textDecoration:"none"}}>Contact</a></li>
