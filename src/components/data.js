@@ -70,6 +70,7 @@ export const data1 = [
   {
     image: betechnos,
     name: " Betechnos Notes",
+    name: "Notes",
     subObject: {
       image: part_1_assi,
       name: "Notes",

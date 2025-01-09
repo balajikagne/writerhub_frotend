@@ -91,7 +91,7 @@ function BetechnosNotes() {
         <div style={cardDetailsStyle}>
           <p>{subObject.description}</p>
           {/* Anchor tag that looks like a button and works properly */}
-          <a href="/writerhub.in" style={buttonStyle}>
+          <a href="https://drive.google.com/file/d/1-RG6EWh7rqEYAi_OcQwdGmsdZbaKb6J4/view?usp=drivesdk" style={buttonStyle}>
             {subObject.buttons.actionButton}
           </a>
           {/* 'Buy Now' button with functionality */}
