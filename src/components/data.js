@@ -69,11 +69,11 @@ export const data = {
 export const data1 = [
   {
     image: betechnos,
-    name: "betechnos Notes",
+    name: " Betechnos Notes",
     subObject: {
       image: part_1_assi,
       name: "Notes",
-      description: "Frontend ( html,css and javascript )",
+      description: "Frontend ( html,css and javascript ) Rs 59 /- ",
       buttons: {
         actionButton: "Preview",
         buyButton: "Buy Now",
