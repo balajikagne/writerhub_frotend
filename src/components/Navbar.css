@@ -111,6 +111,7 @@
         position: sticky;
         top: 100px;
         z-index:2;
+        background-color: rgb(235, 179, 255);
         transition: linear;
         animation-name: menubar;
         animation-duration: 0.5s;
@@ -161,6 +162,7 @@
         align-items: center;
         text-align: center;
         margin-top: 20px;
+        background-color: rgb(235, 179, 255);
     }
     .logo_in_menu > a{
         height: 40px;
