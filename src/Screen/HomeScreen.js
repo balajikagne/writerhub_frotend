@@ -64,7 +64,7 @@ function HomeScreen() {
           <div className='sec_2_text'>
             <h2>Content That Connects</h2>
             <p>We create content that makes a real impact. Whether it’s engaging blog posts, social media content, or videos, we ensure your message resonates with your audience and drives meaningful results.</p>
-            <a href='/cm' alt="" className='btn_services_on_home'>Service</a>
+            <a href='/service' alt="" className='btn_services_on_home'>Service</a>
           </div>
           <div className='sec_2_img'>
             <img src={service} alt=''></img>
@@ -74,7 +74,7 @@ function HomeScreen() {
         <div className='sec_3_text'>
             <h2>WritingServices for Assignments & Documents</h2>
             <p>Need professional writing help? Whether it’s crafting well-researched assignments, creating polished essays, or drafting any type of document, I am here to assist. With years of experience in delivering quality written content, I offer tailored writing solutions to meet your academic or professional needs. From simple documents to complex reports, trust me to provide fast, reliable, and top-notch writing services to help you succeed. Let me take care of your writing tasks so you can focus on what matters most!</p>
-            <a href='/form' alt="" className='btn_services_on_home'>Service</a>
+            <a href='/service' alt="" className='btn_services_on_home'>Service</a>
           </div>
           <div className='sec_3_img'>
             <img src={service1} alt=''></img>
@@ -84,7 +84,7 @@ function HomeScreen() {
         <div className='sec_4_text'>
             <h2>MS Office Expert for Professional Document Creation</h2>
             <p>Unlock the power of expertly crafted documents with the help of a seasoned MS Office professional. Whether you need perfectly formatted reports, eye-catching presentations, or detailed spreadsheets, I’m here to provide top-notch services tailored to your needs. With years of experience in Word, Excel, PowerPoint, and more, I ensure your documents are clear, visually appealing, and polished to perfection. Let me help you save time and elevate your work with precision, creativity, and efficiency!</p>
-            <a href='/cm' alt="" className='btn_services_on_home'>Service</a>
+            <a href='/service' alt="" className='btn_services_on_home'>Service</a>
           </div>
           <div className='sec_4_img'>
             <img src={service2} alt=''></img>
@@ -94,7 +94,7 @@ function HomeScreen() {
         <div className='sec_5_text'>
             <h2>Empowering Your Ideas with Expert Project Creation Services</h2>
             <p>we specialize in transforming your concepts into fully realized projects. Our team of experienced professionals provides tailored solutions for every stage of project creation, from inception to execution. Whether you're building a new website, launching an app, or developing a business plan, we are here to guide you through the entire process. With a focus on innovation, quality, and customer satisfaction, we ensure that every project we undertake meets your unique needs and exceeds your expectations. Let us help you bring your vision to life with precision, creativity, and expertise.</p>
-            <a href='/project' alt="" className='btn_services_on_home'>Service</a>
+            <a href='/service' alt="" className='btn_services_on_home'>Service</a>
           </div>
           <div className='sec_5_img'>
             <img src={service3} alt=''></img>
