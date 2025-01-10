@@ -51,6 +51,7 @@ function MaterialForm() {
   
     const handleFormSubmit = async () => {
       // Called after payment confirmation
+      //something added
       try {
         const payload = {
           content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Question**: ${formData.question || "N/A"}`,
