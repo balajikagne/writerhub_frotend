@@ -45,7 +45,7 @@ function PaymentDetails() {
       });
   
       setTimeout(() => {
-        window.location.href = "https://payments.cashfree.com/forms/writerhubnotes"; // Redirect to Cashfree
+        window.location.href = "https://payments.cashfree.com/forms/writerhubprojects"; // Redirect to Cashfree
       }, 2000);
     };
   
