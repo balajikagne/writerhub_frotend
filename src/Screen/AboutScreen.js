@@ -2,6 +2,18 @@ import React from 'react';
 import './AboutScreen.css';
 import writerhub from "../assets/writer-hub.png"
 const AboutScreen = () => {
+  const buttonStyle = {
+    width: '135px',
+    backgroundColor: '#1065b7',
+    textAlign: 'center',
+    fontWeight: '800',
+    padding: '11px 0px',
+    color: 'white',
+    fontSize: '12px',
+    display: 'inline-block',
+    textDecoration: 'none',
+    borderRadius: '3.229px',
+  };
   return (
     <div className="about-container">
       {/* Headline */}
@@ -23,6 +35,9 @@ Our Document Creation service helps users produce polished, professional documen
         In addition to custom services, WriterHub also offers Project Selling, where users can browse, buy, and sell completed projects, providing a convenient marketplace for unique, ready-made work. WriterHub’s goal is to make content creation and project acquisition easier, faster, and more accessible. Join us and bring your ideas to life with the help of our expert services!
         </p>
       </div>
+      <div>
+      //here
+    </div>
     </div>
   );
 };

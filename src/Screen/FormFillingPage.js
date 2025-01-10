@@ -1,19 +1,16 @@
-import React, { useState , useRef, useEffect} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import "./Formfillingpage.css"
-import paymentqr from "../assets/deepak_qr.jpg";
+import "./Formfillingpage.css";
 import { useLocation } from "react-router-dom";
+import SecureProcess from "./SecureProcess";
+
 const WEBHOOK_URL = "https://discord.com/api/webhooks/1325886081501233274/aUDR4uwTC45PWIWH1f7ild5_dCbelZUXi9xue5TG41ikBHvb_zITmL-IX3vsERz8LD7m";
+
 function FormFillingPage() {
   const formRef = useRef(null);
   const location = useLocation();
 
-  useEffect(() => {
-    if (location.state?.scrollToTop && formRef.current) {
-      formRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, [location.state]);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -21,28 +18,73 @@ function FormFillingPage() {
     department: "",
     domain: "",
     collegeName: "",
-    paymentScreenshot: null,
     question: "",
   });
 
-  const [errors, setErrors] = useState({
-    phone: "",
-  });
-
+  const [errors, setErrors] = useState({ phone: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (location.state?.scrollToTop && formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [location.state]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, paymentScreenshot: e.target.files[0] });
+  const validatePhone = (phone) => /^[789][0-9]{9}$/.test(phone);
+
+  const handlePayment = () => {
+    Swal.fire({
+      title: "Processing Payment...",
+      text: "Redirecting you to the payment gateway.",
+      icon: "info",
+      showConfirmButton: false,
+      timer: 2000,
+    });
+
+    setTimeout(() => {
+      window.location.href = "https://payments.cashfree.com/forms/writerhub"; // Redirect to Cashfree
+    }, 2000);
   };
 
-  const validatePhone = (phone) => {
-    const phoneRegex = /^[789][0-9]{9}$/;
-    return phoneRegex.test(phone);
+  const handleFormSubmit = async () => {
+    // Called after payment confirmation
+    try {
+      const payload = {
+        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Question**: ${formData.question || "N/A"}`,
+      };
+
+      await axios.post(WEBHOOK_URL, payload);
+
+      Swal.fire({
+        title: "Application Submitted!",
+        text: "Your application has been successfully submitted. We will get back to you soon.",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+
+      setFormData({
+        name: "",
+        phone: "",
+        year: "",
+        department: "",
+        domain: "",
+        collegeName: "",
+        question: "",
+      });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      Swal.fire({
+        title: "Error",
+        text: "Failed to submit your application. Please try again later.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -58,69 +100,23 @@ function FormFillingPage() {
       }));
       valid = false;
     } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        phone: "",
-      }));
+      setErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
     }
 
-    if (valid && formData.paymentScreenshot) {
-      setIsSubmitting(true);
+    if (valid) {
+      handlePayment();
 
-      try {
-        // Create form data for file upload
-        const fileData = new FormData();
-        fileData.append("file", formData.paymentScreenshot);
-        fileData.append(
-          "payload_json",
-          JSON.stringify({
-            content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Question**: ${formData.question || "N/A"}`,
-          })
-        );
-
-        // Send data to Discord webhook
-        await axios.post(WEBHOOK_URL, fileData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        });
-
+      // Mock payment confirmation for demonstration purposes
+      setTimeout(() => {
         Swal.fire({
-          title: "Application Submitted!",
-          text: "Your application has been successfully submitted. We will get back to you soon.",
+          title: "Payment Successful",
+          text: "Thank you for your payment. Submitting your application...",
           icon: "success",
           confirmButtonText: "OK",
         }).then(() => {
-          // Reset the form
-          setFormData({
-            name: "",
-            phone: "",
-            year: "",
-            department: "",
-            domain: "",
-            collegeName: "",
-            paymentScreenshot: null,
-            question: "",
-          });
+          handleFormSubmit();
         });
-      } catch (error) {
-        console.error("Error sending message:", error);
-        Swal.fire({
-          title: "Error",
-          text: "Failed to submit your application. Please try again later.",
-          icon: "error",
-          confirmButtonText: "OK",
-        });
-      } finally {
-        setIsSubmitting(false);
-      }
-    } else {
-      Swal.fire({
-        title: "Error",
-        text: "Please upload the payment screenshot before submitting.",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+      }, 4000); // Simulating a payment delay
     }
   };
 
@@ -209,25 +205,6 @@ function FormFillingPage() {
         />
       </div>
       <div>
-        <label>Payment QR Code</label>
-        <div style={{ textAlign: "center" }}>
-          <img
-            src={paymentqr}
-            alt="Payment QR Code"
-            style={{ width: "200px", margin: "10px 0" }}
-          />
-        </div>
-      </div>
-      <div>
-        <label>Upload Payment Screenshot *</label>
-        <input
-          type="file"
-          name="paymentScreenshot"
-          onChange={handleFileChange}
-          required
-        />
-      </div>
-      <div>
         <label>Any Questions (If No, type N/A) *</label>
         <textarea
           name="question"
@@ -237,78 +214,10 @@ function FormFillingPage() {
         ></textarea>
       </div>
       <button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Submitting..." : "Apply Now"}
+        {isSubmitting ? <SecureProcess /> : "Apply Now"}
       </button>
     </form>
   );
 }
 
-
-
-const styles = {
-    container: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "20px",
-      textAlign: "center",
-      fontFamily: "Arial, sans-serif",
-    },
-    heading: {
-      fontSize: "2rem",
-      marginBottom: "20px",
-    },
-    description: {
-      fontSize: "1.2rem",
-      marginBottom: "20px",
-      color: "#555",
-    },
-    button: {
-      padding: "10px 20px",
-      fontSize: "1rem",
-      backgroundColor: "#5865F2",
-      color: "#fff",
-      border: "none",
-      borderRadius: "5px",
-      cursor: "pointer",
-    },
-    form: {
-      display: "flex",
-      flexDirection: "column",
-      width: "300px",
-    },
-    label: {
-      marginBottom: "15px",
-      fontSize: "1rem",
-    },
-    input: {
-      padding: "8px",
-      fontSize: "1rem",
-      marginTop: "5px",
-      width: "100%",
-      border: "1px solid #ccc",
-      borderRadius: "5px",
-    },
-    textarea: {
-      padding: "8px",
-      fontSize: "1rem",
-      marginTop: "5px",
-      width: "100%",
-      height: "80px",
-      border: "1px solid #ccc",
-      borderRadius: "5px",
-    },
-    submitButton: {
-      padding: "10px 20px",
-      fontSize: "1rem",
-      backgroundColor: "#5865F2",
-      color: "#fff",
-      border: "none",
-      borderRadius: "5px",
-      cursor: "pointer",
-    },
-  };
-  
 export default FormFillingPage;
-
