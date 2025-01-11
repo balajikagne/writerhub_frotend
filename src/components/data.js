@@ -2,6 +2,7 @@ import sppu from "../assets/sppu-pic.png";
 import fy from "../assets/fy-logo.png";
 import betechnos from "../assets/betechnos_logo.png"
 import part_1_assi from "../assets/part_ass_1.jpg"
+import part_2_assi from "../assets/reactjs_pt.jpg"
 export const data = {
   UniversityA: {
     image: sppu,
@@ -82,7 +83,7 @@ export const data1 = [
       },
       {
         name: "Notes 2",
-        image: part_1_assi, // Replace with actual image path
+        image: part_2_assi, // Replace with actual image path
         description: "Reactjs Part -1 Rs 19 /-",
         buttons: {
           actionButton: "Preview",
