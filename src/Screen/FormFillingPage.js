@@ -18,6 +18,7 @@ function FormFillingPage() {
     department: "",
     domain: "",
     collegeName: "",
+    duration: "", // Added duration field
     question: "",
   });
 
@@ -55,7 +56,7 @@ function FormFillingPage() {
     // Called after payment confirmation
     try {
       const payload = {
-        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Question**: ${formData.question || "N/A"}`,
+        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Duration**: ${formData.duration} months\n**Question**: ${formData.question || "N/A"}`,
       };
 
       await axios.post(WEBHOOK_URL, payload);
@@ -74,6 +75,7 @@ function FormFillingPage() {
         department: "",
         domain: "",
         collegeName: "",
+        duration: "", // Reset duration field
         question: "",
       });
     } catch (error) {
@@ -122,103 +124,117 @@ function FormFillingPage() {
 
   return (
     <div>
-      <h1 style={{textAlign:'center',fontWeight:"bold",color:"#ffffff"}} ref={formRef}>Fill details</h1>
-    <form onSubmit={handleSubmit} className="internship-form">
-      <div>
-        <label>Name *</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div>
-        <label>Phone *</label>
-        <input
-          type="text"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-        />
-        {errors.phone && <p className="error">{errors.phone}</p>}
-      </div>
-      <div>
-        <label>Year *</label>
-        <select
-          name="year"
-          value={formData.year}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select Year</option>
-          <option value="FY">FY</option>
-          <option value="SY">SY</option>
-          <option value="TY">TY</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div>
-        <label>Department *</label>
-        <select
-          name="department"
-          value={formData.department}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select Department</option>
-          <option value="CSE">CSE</option>
-          <option value="IT">IT</option>
-          <option value="ENTC">ENTC</option>
-          <option value="CIVIL">CIVIL</option>
-          <option value="MECHANICS">MECHANICS</option>
-          <option value="AI">AI</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div>
-        <label>Domain *</label>
-        <select
-          name="domain"
-          value={formData.domain}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select Domain</option>
-          <option value="Web Development">Web Development</option>
-          <option value="Java">Java</option>
-          <option value="Cloud Computing">Cloud Computing</option>
-          <option value="UI/UX Design">UI/UX Design</option>
-          <option value="C++">C++</option>
-          <option value="App Development">App Development</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div>
-        <label>College Name *</label>
-        <input
-          type="text"
-          name="collegeName"
-          value={formData.collegeName}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div>
-        <label>Any Questions (If No, type N/A) Or Mention referrer name*</label>
-        <textarea
-          name="question"
-          value={formData.question}
-          onChange={handleChange}
-          required
-        ></textarea>
-      </div>
-      <button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? <SecureProcess /> : "Apply Now"}
-      </button>
-    </form>
+      <h1 style={{ textAlign: 'center', fontWeight: "bold", color: "#ffffff" }} ref={formRef}>Fill details</h1>
+      <form onSubmit={handleSubmit} className="internship-form">
+        <div>
+          <label>Name *</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Phone *</label>
+          <input
+            type="text"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+          {errors.phone && <p className="error">{errors.phone}</p>}
+        </div>
+        <div>
+          <label>Year *</label>
+          <select
+            name="year"
+            value={formData.year}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select Year</option>
+            <option value="FY">FY</option>
+            <option value="SY">SY</option>
+            <option value="TY">TY</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label>Department *</label>
+          <select
+            name="department"
+            value={formData.department}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select Department</option>
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="ENTC">ENTC</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="MECHANICS">MECHANICS</option>
+            <option value="AI">AI</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label>Domain *</label>
+          <select
+            name="domain"
+            value={formData.domain}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select Domain</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Java">Java</option>
+            <option value="Cloud Computing">Cloud Computing</option>
+            <option value="UI/UX Design">UI/UX Design</option>
+            <option value="C++">C++</option>
+            <option value="App Development">App Development</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label>College Name *</label>
+          <input
+            type="text"
+            name="collegeName"
+            value={formData.collegeName}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Duration *</label>
+          <select
+            name="duration"
+            value={formData.duration}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select Duration</option>
+            <option value="1">1 Month</option>
+            <option value="3">3 Months</option>
+            <option value="6">6 Months</option>
+          </select>
+        </div>
+        <div>
+          <label>Any Questions (If No, type N/A) Or Mention referrer name*</label>
+          <textarea
+            name="question"
+            value={formData.question}
+            onChange={handleChange}
+            required
+          ></textarea>
+        </div>
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? <SecureProcess /> : "Apply Now"}
+        </button>
+      </form>
     </div>
   );
 }
