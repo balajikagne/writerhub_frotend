@@ -119,7 +119,7 @@ function PaymentDetails() {
 
   return (
     <div>
-      <h1 style={{textAlign:'center',fontWeight:"bold"}} ref={nameInputRef}>Fill details</h1>
+      <h1 style={{textAlign:'center',fontWeight:"bold",color:"#ffffff"}} ref={nameInputRef}>Fill details</h1>
     <form onSubmit={handleSubmit} className="internship-form"  >
       
       <div>

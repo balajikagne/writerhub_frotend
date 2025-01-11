@@ -121,7 +121,7 @@ function MaterialForm() {
 
   return (
    <div>
-     <h1 style={{textAlign:'center',fontWeight:"bold"}} ref={formRef}>Fill details</h1>
+     <h1 style={{textAlign:'center',fontWeight:"bold",color:"#ffffff"}} ref={ref={formRef}}>Fill details</h1>
     <form onSubmit={handleSubmit} className="internship-form">
       <div>
         <label>Name *</label>
