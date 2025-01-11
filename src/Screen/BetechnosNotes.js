@@ -6,15 +6,15 @@ function BetechnosNotes() {
   const navigate = useNavigate();
 
   const buynow = () => {
-    navigate("/notes/orderdetails");
+    navigate("/notes/orderdetails", { state: { scrollToTop: true } });
   };
 
   const cardPapa = {
     display: "flex",
-    flexWrap: "wrap", // Allows items to wrap when there's insufficient space
-    justifyContent: "center", // Centers the cards horizontally
-    gap: "10px", // Reduced spacing between cards
-    margin: "10px 0", // Reduced margin for a tighter layout
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "10px",
+    margin: "10px 0",
   };
 
   const containerStyle = {
@@ -31,13 +31,12 @@ function BetechnosNotes() {
   };
 
   const cardStyle = {
-    width: "280px", // Slightly reduced width for better fit
+    width: "280px",
     border: "1px solid #ddd",
     borderRadius: "8px",
     overflow: "hidden",
     textAlign: "center",
     backgroundColor: "#fff",
-    margin: "0", // Removed margin since spacing is controlled by `gap`
     padding: "20px",
   };
 
@@ -78,7 +77,7 @@ function BetechnosNotes() {
               <div style={cardDetailsStyle}>
                 <p>{sub.description}</p>
                 <a
-                  href="https://drive.google.com/file/d/1-RG6EWh7rqEYAi_OcQwdGmsdZbaKb6J4/view?usp=drivesdk"
+                  href={sub.link}
                   style={buttonStyle}
                 >
                   {sub.buttons.actionButton}

@@ -69,13 +69,14 @@ export const data = {
 
 export const data1 = [
   {
-    image: "path_to_betechnos_image", // Replace with actual image path
+    image: betechnos, // Replace with actual image path
     name: "Web Development Notes",
     subObjects: [
       {
         name: "Notes 1",
         image: part_1_assi, // Replace with actual image path
         description: "Frontend (HTML, CSS, and JavaScript) Rs 19 /-",
+        link:"https://drive.google.com/file/d/1-RG6EWh7rqEYAi_OcQwdGmsdZbaKb6J4/view?usp=drivesdk",
         buttons: {
           actionButton: "Preview",
           buyButton: "Buy Now",
@@ -85,6 +86,7 @@ export const data1 = [
         name: "Notes 2",
         image: part_2_assi, // Replace with actual image path
         description: "Reactjs Part -1 Rs 19 /-",
+        link:"https://drive.google.com/file/d/11iE10PzOFVzivwgKfyvtJShRbsRVmJr3/view?usp=drivesdk",
         buttons: {
           actionButton: "Preview",
           buyButton: "Buy Now",

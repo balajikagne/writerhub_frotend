@@ -120,7 +120,9 @@ function MaterialForm() {
     };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="internship-form">
+   <div>
+     <h1 style={{textAlign:'center',fontWeight:"bold"}} ref={formRef}>Fill details</h1>
+    <form onSubmit={handleSubmit} className="internship-form">
       <div>
         <label>Name *</label>
         <input
@@ -216,6 +218,7 @@ function MaterialForm() {
         {isSubmitting ? <SecureProcess /> : "Apply Now"}
       </button>
     </form>
+   </div>
   );
 }
 
