@@ -118,7 +118,9 @@ function PaymentDetails() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="internship-form"  ref={nameInputRef}>
+    <div>
+      <h1 style={{textAlign:'center',fontWeight:"bold"}} ref={nameInputRef}>Fill details</h1>
+    <form onSubmit={handleSubmit} className="internship-form"  >
       
       <div>
         <label>Name *</label>
@@ -216,6 +218,7 @@ function PaymentDetails() {
         {isSubmitting ? "Processing..." : "Apply Now"}
       </button>
     </form>
+    </div>
   );
 }
 
