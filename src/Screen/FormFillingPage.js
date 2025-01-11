@@ -62,7 +62,7 @@ function FormFillingPage() {
 
       Swal.fire({
         title: "Application Submitted!",
-        text: "Your application has been successfully submitted. We will get back to you soon.",
+        text: "successfully submitted. Offer letter will send you within 24 hour",
         icon: "success",
         confirmButtonText: "OK",
       });
@@ -110,7 +110,7 @@ function FormFillingPage() {
       setTimeout(() => {
         Swal.fire({
           title: "Payment Successful",
-          text: "Thank you for your payment. Submitting your application...",
+          text: "Thank you for your payment. Offer letter will send you within 24 hour",
           icon: "success",
           confirmButtonText: "OK",
         }).then(() => {
