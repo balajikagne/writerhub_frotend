@@ -68,16 +68,28 @@ export const data = {
 
 export const data1 = [
   {
-    image: betechnos,
-    name: " Web development Notes",
-    subObject: {
-      image: part_1_assi,
-      name: "Notes",
-      description: "Frontend ( html,css and javascript ) Rs 59 /- ",
-      buttons: {
-        actionButton: "Preview",
-        buyButton: "Buy Now",
+    image: "path_to_betechnos_image", // Replace with actual image path
+    name: "Web Development Notes",
+    subObjects: [
+      {
+        name: "Notes 1",
+        image: part_1_assi, // Replace with actual image path
+        description: "Frontend (HTML, CSS, and JavaScript) Rs 19 /-",
+        buttons: {
+          actionButton: "Preview",
+          buyButton: "Buy Now",
+        },
       },
-    },
+      {
+        name: "Notes 2",
+        image: part_1_assi, // Replace with actual image path
+        description: "Reactjs Part -1 Rs 19 /-",
+        buttons: {
+          actionButton: "Preview",
+          buyButton: "Buy Now",
+        },
+      },
+    ],
   },
 ];
+
