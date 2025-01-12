@@ -38,7 +38,17 @@ function FormFillingPage() {
 
   const validatePhone = (phone) => /^[789][0-9]{9}$/.test(phone);
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
+    try {
+      const payload = {
+        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Duration**: ${formData.duration} months\n**Question**: ${formData.question || "N/A"}`,
+      };
+
+      await axios.post(WEBHOOK_URL, payload);
+    }
+    catch(error){
+      console.log(error)
+    }
     Swal.fire({
       title: "Processing Payment...",
       text: "Redirecting you to the payment gateway.",
@@ -55,18 +65,9 @@ function FormFillingPage() {
   const handleFormSubmit = async () => {
     // Called after payment confirmation
     try {
-      const payload = {
-        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Duration**: ${formData.duration} months\n**Question**: ${formData.question || "N/A"}`,
-      };
+      
 
-      await axios.post(WEBHOOK_URL, payload);
-
-      Swal.fire({
-        title: "Application Submitted!",
-        text: "successfully submitted. Offer letter will send you within 24 hour",
-        icon: "success",
-        confirmButtonText: "OK",
-      });
+      
 
       setFormData({
         name: "",
@@ -80,12 +81,7 @@ function FormFillingPage() {
       });
     } catch (error) {
       console.error("Error sending message:", error);
-      Swal.fire({
-        title: "Error",
-        text: "Failed to submit your application. Please try again later.",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+      
     }
   };
 
@@ -110,14 +106,7 @@ function FormFillingPage() {
 
       // Mock payment confirmation for demonstration purposes
       setTimeout(() => {
-        Swal.fire({
-          title: "Payment Successful",
-          text: "Thank you for your payment. Offer letter will send you within 24 hour",
-          icon: "success",
-          confirmButtonText: "OK",
-        }).then(() => {
-          handleFormSubmit();
-        });
+        
       }, 4000); // Simulating a payment delay
     }
   };
