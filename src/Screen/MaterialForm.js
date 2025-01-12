@@ -33,7 +33,16 @@ function MaterialForm() {
 
   const validatePhone = (phone) => /^[789][0-9]{9}$/.test(phone);
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
+    try{
+      const payload = {
+        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**College Name**: ${formData.collegeName}\n**Question**: ${formData.question || "N/A"}`,
+      };
+  
+      await axios.post(WEBHOOK_URL, payload);
+    }catch(error){
+      console.log(error)
+    }
     Swal.fire({
       title: "Processing Payment...",
       text: "Redirecting you to the payment gateway.",
@@ -50,18 +59,18 @@ function MaterialForm() {
   const handleFormSubmit = async () => {
     // Called after payment confirmation
     try {
-      const payload = {
-        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**College Name**: ${formData.collegeName}\n**Question**: ${formData.question || "N/A"}`,
-      };
+      // const payload = {
+      //   content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**College Name**: ${formData.collegeName}\n**Question**: ${formData.question || "N/A"}`,
+      // };
 
-      await axios.post(WEBHOOK_URL, payload);
+      // await axios.post(WEBHOOK_URL, payload);
 
-      Swal.fire({
-        title: "Application Submitted!",
-        text: "Your application has been successfully submitted. We will get back to you soon.",
-        icon: "success",
-        confirmButtonText: "OK",
-      });
+      // Swal.fire({
+      //   title: "Application Submitted!",
+      //   text: "Your application has been successfully submitted. We will get back to you soon.",
+      //   icon: "success",
+      //   confirmButtonText: "OK",
+      // });
 
       setFormData({
         name: "",
@@ -100,16 +109,16 @@ function MaterialForm() {
       handlePayment();
 
       // Mock payment confirmation for demonstration purposes
-      setTimeout(() => {
-        Swal.fire({
-          title: "Payment Successful",
-          text: "Thank you for your payment. Submitting your application...",
-          icon: "success",
-          confirmButtonText: "OK",
-        }).then(() => {
-          handleFormSubmit();
-        });
-      }, 4000); // Simulating a payment delay
+      // setTimeout(() => {
+      //   Swal.fire({
+      //     title: "Payment Successful",
+      //     text: "Thank you for your payment. Submitting your application...",
+      //     icon: "success",
+      //     confirmButtonText: "OK",
+      //   }).then(() => {
+      //     handleFormSubmit();
+      //   });
+      // }, 4000); // Simulating a payment delay
     }
   };
 
@@ -158,7 +167,7 @@ function MaterialForm() {
           ></textarea>
         </div>
         <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? <SecureProcess /> : "Apply Now"}
+          {isSubmitting ? <SecureProcess /> : "Submit"}
         </button>
       </form>
     </div>
