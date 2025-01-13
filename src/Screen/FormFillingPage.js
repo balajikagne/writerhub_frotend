@@ -14,6 +14,7 @@ function FormFillingPage() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    email: "", // Added email field
     year: "",
     department: "",
     domain: "",
@@ -22,7 +23,7 @@ function FormFillingPage() {
     question: "",
   });
 
-  const [errors, setErrors] = useState({ phone: "" });
+  const [errors, setErrors] = useState({ phone: "", email: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -37,18 +38,9 @@ function FormFillingPage() {
   };
 
   const validatePhone = (phone) => /^[789][0-9]{9}$/.test(phone);
+  const validateEmail = (email) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email); // Basic email validation
 
-  const handlePayment = async () => {
-    try {
-      const payload = {
-        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Duration**: ${formData.duration} months\n**Question**: ${formData.question || "N/A"}`,
-      };
-
-      await axios.post(WEBHOOK_URL, payload);
-    }
-    catch(error){
-      console.log(error)
-    }
+  const handlePayment = () => {
     Swal.fire({
       title: "Processing Payment...",
       text: "Redirecting you to the payment gateway.",
@@ -65,13 +57,23 @@ function FormFillingPage() {
   const handleFormSubmit = async () => {
     // Called after payment confirmation
     try {
-      
+      const payload = {
+        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Email**: ${formData.email}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Duration**: ${formData.duration} months\n**Question**: ${formData.question || "N/A"}`,
+      };
 
-      
+      await axios.post(WEBHOOK_URL, payload);
+
+      Swal.fire({
+        title: "Application Submitted!",
+        text: "successfully submitted. Offer letter will send you within 24 hour",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
 
       setFormData({
         name: "",
         phone: "",
+        email: "", // Reset email field
         year: "",
         department: "",
         domain: "",
@@ -81,7 +83,12 @@ function FormFillingPage() {
       });
     } catch (error) {
       console.error("Error sending message:", error);
-      
+      Swal.fire({
+        title: "Error",
+        text: "Failed to submit your application. Please try again later.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     }
   };
 
@@ -101,12 +108,30 @@ function FormFillingPage() {
       setErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
     }
 
+    // Validate email
+    if (!validateEmail(formData.email)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: "Please enter a valid email address",
+      }));
+      valid = false;
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, email: "" }));
+    }
+
     if (valid) {
       handlePayment();
 
       // Mock payment confirmation for demonstration purposes
       setTimeout(() => {
-        
+        Swal.fire({
+          title: "Payment Successful",
+          text: "Thank you for your payment. Offer letter will send you within 24 hour",
+          icon: "success",
+          confirmButtonText: "OK",
+        }).then(() => {
+          handleFormSubmit();
+        });
       }, 4000); // Simulating a payment delay
     }
   };
@@ -135,6 +160,17 @@ function FormFillingPage() {
             required
           />
           {errors.phone && <p className="error">{errors.phone}</p>}
+        </div>
+        <div>
+          <label>Email *</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          {errors.email && <p className="error">{errors.email}</p>}
         </div>
         <div>
           <label>Year *</label>
