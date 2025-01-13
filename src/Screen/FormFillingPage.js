@@ -43,10 +43,35 @@ function FormFillingPage() {
   const handlePayment = async () => {
     try
     {
-      const payload = {
+      const payload1 = {
         content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Email**: ${formData.email}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Duration**: ${formData.duration} months\n**Question**: ${formData.question || "N/A"}`,
       };
-      await axios.post(WEBHOOK_URL, payload);
+      await axios.post(WEBHOOK_URL, payload1);
+      const GOOGLE_SHEET_URL = "https://sheetdb.io/api/v1/acdzkpo6r832i";
+    const payload = {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      year: formData.year,
+      department: formData.department,
+      domain: formData.domain,
+      collegeName: formData.collegeName,
+      duration: formData.duration,
+      question: formData.question,
+    };
+
+    // Send POST request to Google Sheets API
+    const response = await fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", // Specify JSON content
+      },
+      body: JSON.stringify(payload), // Use the payload
+    });
+
+    // Parse and handle the response
+    const json = await response.json();
+    console.log("Response from Google Sheets API:", json);
 
     }
     catch(error){
@@ -121,7 +146,7 @@ function FormFillingPage() {
       handlePayment();
 
       // Mock payment confirmation for demonstration purposes
-      
+    
     }
   };
 
@@ -254,4 +279,3 @@ function FormFillingPage() {
 }
 
 export default FormFillingPage;
- 
