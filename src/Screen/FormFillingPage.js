@@ -121,16 +121,7 @@ function FormFillingPage() {
       handlePayment();
 
       // Mock payment confirmation for demonstration purposes
-      setTimeout(() => {
-        Swal.fire({
-          title: "Payment Successful",
-          text: "Thank you for your payment. Offer letter will send you within 24 hour",
-          icon: "success",
-          confirmButtonText: "OK",
-        }).then(() => {
-          handleFormSubmit();
-        });
-      }, 4000); // Simulating a payment delay
+      
     }
   };
 
