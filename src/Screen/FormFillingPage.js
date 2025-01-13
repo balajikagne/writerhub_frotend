@@ -14,6 +14,7 @@ function FormFillingPage() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    email: "", // Added email field
     year: "",
     department: "",
     domain: "",
@@ -22,7 +23,7 @@ function FormFillingPage() {
     question: "",
   });
 
-  const [errors, setErrors] = useState({ phone: "" });
+  const [errors, setErrors] = useState({ phone: "", email: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -37,6 +38,7 @@ function FormFillingPage() {
   };
 
   const validatePhone = (phone) => /^[789][0-9]{9}$/.test(phone);
+  const validateEmail = (email) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email); // Basic email validation
 
   const handlePayment = () => {
     Swal.fire({
@@ -56,7 +58,7 @@ function FormFillingPage() {
     // Called after payment confirmation
     try {
       const payload = {
-        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Duration**: ${formData.duration} months\n**Question**: ${formData.question || "N/A"}`,
+        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Email**: ${formData.email}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Duration**: ${formData.duration} months\n**Question**: ${formData.question || "N/A"}`,
       };
 
       await axios.post(WEBHOOK_URL, payload);
@@ -71,6 +73,7 @@ function FormFillingPage() {
       setFormData({
         name: "",
         phone: "",
+        email: "", // Reset email field
         year: "",
         department: "",
         domain: "",
@@ -103,6 +106,17 @@ function FormFillingPage() {
       valid = false;
     } else {
       setErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
+    }
+
+    // Validate email
+    if (!validateEmail(formData.email)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: "Please enter a valid email address",
+      }));
+      valid = false;
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, email: "" }));
     }
 
     if (valid) {
@@ -146,6 +160,17 @@ function FormFillingPage() {
             required
           />
           {errors.phone && <p className="error">{errors.phone}</p>}
+        </div>
+        <div>
+          <label>Email *</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          {errors.email && <p className="error">{errors.email}</p>}
         </div>
         <div>
           <label>Year *</label>
