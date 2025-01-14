@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { SelectionContext } from "../SelectionContext";
-import { data, data1 } from "../components/data";
+import { data2, data1 } from "../components/data";
 
 function UniversityPage() {
   const { handleUniversitySelect, handleDataSelect } = useContext(SelectionContext); // Ensure handleDataSelect is retrieved
@@ -25,14 +25,14 @@ function UniversityPage() {
 
       {/* University Cards */}
       <div className="card-container">
-        {Object.keys(data).map((university) => (
+        {Object.keys(data2).map((university) => (
           <div
             key={university}
             className="card"
             onClick={() => selectUniversity(university)}
           >
             <img
-              src={data[university].image}
+              src={data2[university].image}
               alt={university}
               className="card-image"
             />

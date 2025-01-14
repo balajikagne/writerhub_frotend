@@ -5,7 +5,7 @@ import "./Formfillingpage.css";
 import { useLocation } from "react-router-dom";
 import SecureProcess from "./SecureProcess";
 
-const WEBHOOK_URL = "https://discord.com/api/webhooks/1325886081501233274/aUDR4uwTC45PWIWH1f7ild5_dCbelZUXi9xue5TG41ikBHvb_zITmL-IX3vsERz8LD7m";
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1328364791525277767/HkzINKai_7JIVpjIl3Ad2Ogzk_qoF2XHbsczIJflq6VD1-EoFMYyB5lizKZanT5KvEkG";
 
 function FormFillingPage() {
   const formRef = useRef(null);
@@ -40,7 +40,43 @@ function FormFillingPage() {
   const validatePhone = (phone) => /^[789][0-9]{9}$/.test(phone);
   const validateEmail = (email) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email); // Basic email validation
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
+    try
+    {
+      const payload1 = {
+        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Email**: ${formData.email}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Duration**: ${formData.duration} months\n**Question**: ${formData.question || "N/A"}`,
+      };
+      await axios.post(WEBHOOK_URL, payload1);
+      const GOOGLE_SHEET_URL = "https://sheetdb.io/api/v1/acdzkpo6r832i";
+    const payload = {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      year: formData.year,
+      department: formData.department,
+      domain: formData.domain,
+      collegeName: formData.collegeName,
+      duration: formData.duration,
+      question: formData.question,
+    };
+
+    // Send POST request to Google Sheets API
+    const response = await fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", // Specify JSON content
+      },
+      body: JSON.stringify(payload), // Use the payload
+    });
+
+    // Parse and handle the response
+    const json = await response.json();
+    console.log("Response from Google Sheets API:", json);
+
+    }
+    catch(error){
+      console.log(error)
+    }
     Swal.fire({
       title: "Processing Payment...",
       text: "Redirecting you to the payment gateway.",
@@ -57,19 +93,6 @@ function FormFillingPage() {
   const handleFormSubmit = async () => {
     // Called after payment confirmation
     try {
-      const payload = {
-        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Email**: ${formData.email}\n**Year**: ${formData.year}\n**Department**: ${formData.department}\n**Domain**: ${formData.domain}\n**College Name**: ${formData.collegeName}\n**Duration**: ${formData.duration} months\n**Question**: ${formData.question || "N/A"}`,
-      };
-
-      await axios.post(WEBHOOK_URL, payload);
-
-      Swal.fire({
-        title: "Application Submitted!",
-        text: "successfully submitted. Offer letter will send you within 24 hour",
-        icon: "success",
-        confirmButtonText: "OK",
-      });
-
       setFormData({
         name: "",
         phone: "",
@@ -83,12 +106,7 @@ function FormFillingPage() {
       });
     } catch (error) {
       console.error("Error sending message:", error);
-      Swal.fire({
-        title: "Error",
-        text: "Failed to submit your application. Please try again later.",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+      
     }
   };
 
@@ -121,18 +139,7 @@ function FormFillingPage() {
 
     if (valid) {
       handlePayment();
-
-      // Mock payment confirmation for demonstration purposes
-      setTimeout(() => {
-        Swal.fire({
-          title: "Payment Successful",
-          text: "Thank you for your payment. Offer letter will send you within 24 hour",
-          icon: "success",
-          confirmButtonText: "OK",
-        }).then(() => {
-          handleFormSubmit();
-        });
-      }, 4000); // Simulating a payment delay
+  
     }
   };
 
