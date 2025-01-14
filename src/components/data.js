@@ -3,6 +3,10 @@ import fy from "../assets/fy-logo.png";
 import betechnos from "../assets/betechnos_logo.png"
 import part_1_assi from "../assets/part_ass_1.jpg"
 import part_2_assi from "../assets/reactjs_pt.jpg"
+import javascript from "../assets/full_javascript.jpg"
+import sql from "../assets/sql_pre_photo.jpg"
+import css from "../assets/css_hand_notes.jpg"
+import java from "../assets/java_hadnwritten_notes.jpg"
 export const data = {
   UniversityA: {
     image: sppu,
@@ -87,6 +91,46 @@ export const data1 = [
         image: part_2_assi, // Replace with actual image path
         description: "Reactjs Part -1 Rs 19 /-",
         link:"https://drive.google.com/file/d/11iE10PzOFVzivwgKfyvtJShRbsRVmJr3/view?usp=drivesdk",
+        buttons: {
+          actionButton: "Preview",
+          buyButton: "Buy Now",
+        },
+      },
+      {
+        name: "Notes 3",
+        image: javascript, // Replace with actual image path
+        description: "full javascript Rs 59 /-",
+        link:"https://drive.google.com/file/d/15tUQvvx3Sw4un7rUJfTN5abUTgo7LPgJ/view?usp=sharing",
+        buttons: {
+          actionButton: "Preview",
+          buyButton: "Buy Now",
+        },
+      },
+      {
+        name: "Notes 4",
+        image: css, // Replace with actual image path
+        description: "full handwritten html css notes Rs 59 /-",
+        link:"https://drive.google.com/file/d/15qYE64i8rADKXv1WzhPgkpq2hCjD0k4G/view?usp=sharing",
+        buttons: {
+          actionButton: "Preview",
+          buyButton: "Buy Now",
+        },
+      },
+      {
+        name: "Notes 5",
+        image: java, // Replace with actual image path
+        description: "full handwritten java notes Rs 59 /-",
+        link:"https://drive.google.com/file/d/15eW5-sPbzUXbm4xDrJHYn8Ycip2FnmAQ/view?usp=sharing",
+        buttons: {
+          actionButton: "Preview",
+          buyButton: "Buy Now",
+        },
+      },
+      {
+        name: "Notes 6",
+        image: sql, // Replace with actual image path
+        description: "full handwritten sql notes Rs 59 /-",
+        link:"https://drive.google.com/file/d/15ejCwi09G9tgZedE4zZO7vdWRP0J5Giu/view?usp=sharing",
         buttons: {
           actionButton: "Preview",
           buyButton: "Buy Now",
