@@ -93,6 +93,14 @@ function FormFillingPage() {
   const handleFormSubmit = async () => {
     // Called after payment confirmation
     try {
+<<<<<<< HEAD
+=======
+      
+
+
+     
+
+>>>>>>> d081a9dc3b3b44ac86ee59e2ac82dd20bd5c0e4f
       setFormData({
         name: "",
         phone: "",
@@ -139,7 +147,13 @@ function FormFillingPage() {
 
     if (valid) {
       handlePayment();
+<<<<<<< HEAD
   
+=======
+
+      // Mock payment confirmation for demonstration purposes
+    
+>>>>>>> d081a9dc3b3b44ac86ee59e2ac82dd20bd5c0e4f
     }
   };
 
