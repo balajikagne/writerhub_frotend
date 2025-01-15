@@ -30,6 +30,9 @@ import FormFillingPage from './Screen/FormFillingPage';
 import PaymentDetails from './Screen/PaymentDetails';
 import BetechnosNotes from './Screen/BetechnosNotes';
 import MaterialForm from './Screen/MaterialForm';
+import CourseSelector from "./Screen//CourseSelector";
+import CoursePage from "./Screen/CoursePage";
+import LectureCard from "./Screen//LectureCard";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -74,6 +77,10 @@ function App() {
               <Route path="/orderdetails" element={<PaymentDetails />} />
               <Route path="/notes/orderdetails" element={<MaterialForm />} />
               <Route path="/betechnos/notes" element={<BetechnosNotes />} />
+              <Route path="/courses" element={<CourseSelector />} />
+              <Route path="/" element={<CourseSelector />} />
+        <Route path="/course/:courseId" element={<CoursePage />} />
+        <Route path="/lecture/:lectureId" element={<LectureCard />} />
             </Routes>
             <Footer />
           </Router>

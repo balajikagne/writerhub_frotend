@@ -167,7 +167,7 @@ function MaterialForm() {
           ></textarea>
         </div>
         <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? <SecureProcess /> : "Submit"}
+          {isSubmitting ? <SecureProcess /> : "Pay Now"}
         </button>
       </form>
     </div>

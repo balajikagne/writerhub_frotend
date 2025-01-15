@@ -7,6 +7,7 @@ import javascript from "../assets/full_javascript.jpg"
 import sql from "../assets/sql_pre_photo.jpg"
 import css from "../assets/css_hand_notes.jpg"
 import java from "../assets/java_hadnwritten_notes.jpg"
+import mern from "../assets/full_stack_devlopment.png"
 export const data = {
   UniversityA: {
     image: sppu,
@@ -141,3 +142,29 @@ export const data1 = [
 ];
 
 export const data2=[]
+
+export const courses = [
+  {
+    id: 1,
+    title: "Full stack Development",
+    description: "Learn the basics and advanced concepts of Development",
+    image:mern,
+    lectures: [
+      { id: 1,image:mern, title: "Basics introduction",link: "https://drive.google.com/file/d/11HTjfKIynplMdubd1jmeW8f1hwkiM6od/view?usp=drive_link" },
+      { id: 2,image:mern, title: "html part - 1", link: "https://drive.google.com/file/d/13RrsqaNHPvrMhTGIWH7_vIZckTJ6Pk2b/view?usp=drive_link" },
+      { id: 3,image:mern, title: "html part - 2", link: "https://drive.google.com/file/d/12XCTelDMqMFLELqaod8Ioz0B8iZ05KBS/view?usp=drive_link" },
+      { id: 4,image:mern, title: "html part - 3", link: "https://drive.google.com/file/d/16yahk2vKPMMfk7elscbQ7bJ561TK1Ll6/view?usp=drive_link" },
+
+    ],
+  },
+  // {
+  //   id: 2,
+  //   title: "JavaScript Mastery",
+  //   description: "Master JavaScript for front-end and back-end development.",
+  //   image: "https://via.placeholder.com/150?text=JavaScript",
+  //   lectures: [
+  //     { id: 1, title: "JavaScript Basics", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  //     { id: 2, title: "ES6 Features", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" },
+  //   ],
+  // },
+];

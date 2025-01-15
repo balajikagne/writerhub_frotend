@@ -26,8 +26,8 @@ function ServiceScreen() {
             <h2>Project Services</h2>
             </div>
             <div className="service_content_box">
-            <a href="/writeup/description"><img src={service1}></img></a>
-            <h2>Assignments</h2>
+            <a href="/courses"><img src={service1}></img></a>
+            <h2>Lectures</h2>
             </div>
             <div className="service_content_box">
             <a href="/cm"><img src={service5}></img></a>

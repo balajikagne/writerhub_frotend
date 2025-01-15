@@ -138,7 +138,7 @@ function PaymentDetails() {
           ></textarea>
         </div>
         <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Processing..." : "Submit"}
+          {isSubmitting ? "Processing..." : "Pay Now"}
         </button>
       </form>
     </div>
