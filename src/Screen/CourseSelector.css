@@ -1,0 +1,114 @@
+/* Course Container */
+.course_container_out {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: -moz-initial;
+}
+
+.course_title {
+  font-family: -moz-initial;
+  margin-bottom: 20px;
+}
+
+/* Course Card Container */
+.course_card_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Individual Course Card */
+.course_card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 70%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 16px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Course Image */
+.course_image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Course Description */
+
+
+/* Course Price */
+.course_price {
+  font-family: -moz-initial;
+  text-align: center;
+}
+
+/* Button Container */
+.button_container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Button Styles */
+.open_button {
+  padding: 10px 16px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buy_button {
+  padding: 10px 16px;
+  background: #ffc107;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive Design for Small Screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .course_card {
+    width: 100%; /* Take full width on small screens */
+  }
+
+  .course_card_container {
+    flex-direction: column; /* Stack cards vertically on small screens */
+    align-items: center;
+  }
+  
+}
+
+/* Responsive Design for Large Screens (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    .course_card_container {
+        display: flex;
+      width: 100%; /* Display cards horizontally */
+    }
+    .course_image {
+        width: 300px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+    .course_card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px; /* Adjust width for large screens (e.g., 45% for two items per row) */
+    }
+    .course_description {
+        width: 40%;
+        font-size: 14px;
+        color: #666;
+      }
+  }

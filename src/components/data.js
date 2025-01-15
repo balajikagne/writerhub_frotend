@@ -147,7 +147,7 @@ export const courses = [
   {
     id: 1,
     title: "Full stack Development",
-    description: "Learn the basics and advanced concepts of Development",
+    description: "Comprehensive Learning 📚Master the entire Full Stack Development journey—from front-end essentials to advanced back-end concepts.Affordable Price 💰Access this premium course for just ₹399, a small investment to achieve your big career goals.Special Offer for Interns 🎓Get this course FREE when you enroll in our internship program. A double win for your learning and experience!Lifetime Access 🔑Enjoy unrestricted, lifetime access to all course materials—learn at your own pace, anytime, anywhere.Real-World Projects 💻Work on hands-on projects that will help you apply your knowledge and impress future employers.Expert Guidance 👨‍🏫Learn from top-notch instructors with years of industry experience and insider knowledge.Community Support 🤝Be part of a vibrant community of learners and mentors. Share knowledge, solve challenges, and grow together.Certification of Completion 🏆Receive an industry-recognized certificate to showcase your skills and boost your resume.",
     image:mern,
     lectures: [
       { id: 1,image:mern, title: "Basics introduction",link: "https://drive.google.com/file/d/11HTjfKIynplMdubd1jmeW8f1hwkiM6od/view?usp=drive_link" },
