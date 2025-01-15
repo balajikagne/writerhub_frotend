@@ -14,7 +14,9 @@ const CoursePage = () => {
 
   return (
     <div>
-      <h1 style={{ textAlign: "center", marginBottom: "20px" ,fontFamily:"-moz-initial", color:"white"}}>{course.title}</h1>
+      <h1 style={{ textAlign: "center", marginBottom: "20px", fontFamily: "-moz-initial", color: "white" }}>
+        {course.title}
+      </h1>
       <div
         style={{
           display: "flex",
@@ -33,6 +35,9 @@ const CoursePage = () => {
               width: "300px",
               boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
               backgroundColor: "#ffffff",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center", // Center content horizontally
             }}
           >
             <img
@@ -44,11 +49,14 @@ const CoursePage = () => {
                 marginBottom: "10px",
               }}
             />
-            <h3 style={{fontFamily:"-moz-initial"}}>{lecture.title}</h3>
+            <h3 style={{ fontFamily: "-moz-initial", textAlign: "center" }}>{lecture.title}</h3>
             <a
               href={lecture.link}
               style={{
                 textDecoration: "none",
+                width: "100%", // Make button stretch to the width of the card
+                display: "flex", // Use flexbox to center the button horizontally
+                justifyContent: "center",
               }}
             >
               <button
@@ -60,7 +68,7 @@ const CoursePage = () => {
                   borderRadius: "4px",
                   cursor: "pointer",
                   marginTop: "10px",
-                  fontFamily:"-moz-initial"
+                  fontFamily: "-moz-initial",
                 }}
               >
                 Watch
