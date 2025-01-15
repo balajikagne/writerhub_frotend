@@ -26,11 +26,11 @@ function ServiceScreen() {
             <h2>Project Services</h2>
             </div>
             <div className="service_content_box">
-            <a href="/courses"><img src={service1}></img></a>
+            <a href="/courses"><img src={service5}></img></a>
             <h2>Lectures</h2>
             </div>
             <div className="service_content_box">
-            <a href="/cm"><img src={service5}></img></a>
+            <a href="/cm"><img src={service1}></img></a>
             <h2>Ms-office Service</h2>
             </div>
           </div>
