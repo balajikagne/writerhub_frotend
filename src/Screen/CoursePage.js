@@ -14,7 +14,7 @@ const CoursePage = () => {
 
   return (
     <div>
-      <h1 style={{ textAlign: "center", marginBottom: "20px" ,fontFamily:"-moz-initial"}}>{course.title}</h1>
+      <h1 style={{ textAlign: "center", marginBottom: "20px" ,fontFamily:"-moz-initial", color:"white"}}>{course.title}</h1>
       <div
         style={{
           display: "flex",
