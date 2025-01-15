@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import "./Formfillingpage.css";
 import { useLocation } from "react-router-dom";
 import SecureProcess from "./SecureProcess";
+
 const WEBHOOK_URL = "https://discord.com/api/webhooks/1325410724050112624/DehVrnDC9nwcPHjftmOEoTg7qNl1ubyrOaSeIkwbDIMv23ut7cgC5wgB-s0AktJI_5hP";
 
 function MaterialForm() {
@@ -13,11 +14,11 @@ function MaterialForm() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    collegeName: "",
+    email: "",
     question: "",
   });
 
-  const [errors, setErrors] = useState({ phone: "" });
+  const [errors, setErrors] = useState({ phone: "", email: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -32,17 +33,19 @@ function MaterialForm() {
   };
 
   const validatePhone = (phone) => /^[789][0-9]{9}$/.test(phone);
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handlePayment = async () => {
-    try{
+    try {
       const payload = {
-        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**College Name**: ${formData.collegeName}\n**Question**: ${formData.question || "N/A"}`,
+        content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Email**: ${formData.email}\n**Question**: ${formData.question || "N/A"}`,
       };
-  
+
       await axios.post(WEBHOOK_URL, payload);
-    }catch(error){
-      console.log(error)
+    } catch (error) {
+      console.error(error);
     }
+
     Swal.fire({
       title: "Processing Payment...",
       text: "Redirecting you to the payment gateway.",
@@ -52,41 +55,8 @@ function MaterialForm() {
     });
 
     setTimeout(() => {
-      window.location.href = "https://payments.cashfree.com/forms/writerhubnotes"; // Redirect to Cashfree
+      window.location.href = "https://payments.cashfree.com/forms/writerhubnotes";
     }, 2000);
-  };
-
-  const handleFormSubmit = async () => {
-    // Called after payment confirmation
-    try {
-      // const payload = {
-      //   content: `**New Internship Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**College Name**: ${formData.collegeName}\n**Question**: ${formData.question || "N/A"}`,
-      // };
-
-      // await axios.post(WEBHOOK_URL, payload);
-
-      // Swal.fire({
-      //   title: "Application Submitted!",
-      //   text: "Your application has been successfully submitted. We will get back to you soon.",
-      //   icon: "success",
-      //   confirmButtonText: "OK",
-      // });
-
-      setFormData({
-        name: "",
-        phone: "",
-        collegeName: "",
-        question: "",
-      });
-    } catch (error) {
-      console.error("Error sending message:", error);
-      Swal.fire({
-        title: "Error",
-        text: "Failed to submit your application. Please try again later.",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-    }
   };
 
   const handleSubmit = async (e) => {
@@ -105,20 +75,19 @@ function MaterialForm() {
       setErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
     }
 
+    // Validate email
+    if (!validateEmail(formData.email)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: "Please enter a valid email address",
+      }));
+      valid = false;
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, email: "" }));
+    }
+
     if (valid) {
       handlePayment();
-
-      // Mock payment confirmation for demonstration purposes
-      // setTimeout(() => {
-      //   Swal.fire({
-      //     title: "Payment Successful",
-      //     text: "Thank you for your payment. Submitting your application...",
-      //     icon: "success",
-      //     confirmButtonText: "OK",
-      //   }).then(() => {
-      //     handleFormSubmit();
-      //   });
-      // }, 4000); // Simulating a payment delay
     }
   };
 
@@ -148,14 +117,15 @@ function MaterialForm() {
           {errors.phone && <p className="error">{errors.phone}</p>}
         </div>
         <div>
-          <label>College Name *</label>
+          <label>Email *</label>
           <input
-            type="text"
-            name="collegeName"
-            value={formData.collegeName}
+            type="email"
+            name="email"
+            value={formData.email}
             onChange={handleChange}
             required
           />
+          {errors.email && <p className="error">{errors.email}</p>}
         </div>
         <div>
           <label>Any Questions (If No, type N/A) *</label>
