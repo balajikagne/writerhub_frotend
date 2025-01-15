@@ -13,12 +13,13 @@ function PaymentDetails() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    collegeName: "",
+    email: "",
     question: "",
   });
 
-  const [errors, setErrors] = useState({ phone: "" });
+  const [errors, setErrors] = useState({ phone: "", email: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isEmailRequired, setIsEmailRequired] = useState(true); // Condition flag
 
   useEffect(() => {
     if (location.state?.scrollToTop) {
@@ -33,11 +34,12 @@ function PaymentDetails() {
   };
 
   const validatePhone = (phone) => /^[789][0-9]{9}$/.test(phone);
+  const validateEmail = (email) => /\S+@\S+\.\S+/.test(email); // Email validation regex
 
   const handlePayment = async () => {
     try {
       const payload = {
-        content: `**New Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**College Name**: ${formData.collegeName}\n**Question**: ${formData.question || "N/A"}`,
+        content: `**New Application**\n\n**Name**: ${formData.name}\n**Phone**: ${formData.phone}\n**Email**: ${formData.email || "N/A"}\n**Question**: ${formData.question || "N/A"}`,
       };
 
       await axios.post(WEBHOOK_URL, payload);
@@ -63,7 +65,7 @@ function PaymentDetails() {
       setFormData({
         name: "",
         phone: "",
-        collegeName: "",
+        email: "",
         question: "",
       });
     } catch (error) {
@@ -76,6 +78,7 @@ function PaymentDetails() {
 
     let valid = true;
 
+    // Phone validation
     if (!validatePhone(formData.phone)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -84,6 +87,17 @@ function PaymentDetails() {
       valid = false;
     } else {
       setErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
+    }
+
+    // Email validation (only if email is required)
+    if (isEmailRequired && !validateEmail(formData.email)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: "Please enter a valid email address",
+      }));
+      valid = false;
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, email: "" }));
     }
 
     if (valid) {
@@ -119,14 +133,15 @@ function PaymentDetails() {
           {errors.phone && <p className="error">{errors.phone}</p>}
         </div>
         <div>
-          <label>College Name *</label>
+          <label>{isEmailRequired ? "Email *" : "College Name *"}</label>
           <input
             type="text"
-            name="collegeName"
-            value={formData.collegeName}
+            name={isEmailRequired ? "email" : "collegeName"}
+            value={isEmailRequired ? formData.email : formData.collegeName}
             onChange={handleChange}
             required
           />
+          {isEmailRequired && errors.email && <p className="error">{errors.email}</p>}
         </div>
         <div>
           <label>Any Questions (If No, type N/A) *</label>
