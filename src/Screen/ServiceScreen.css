@@ -65,14 +65,14 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         animation-name: service_ani;
         animation-duration: 10s;
         animation-iteration-count: infinite;
     }
     .service_content{
-        height: 100vh;
+        height: 50vh;
         width: 100%;
         display: grid;
         grid-template-columns: auto auto auto;
@@ -87,6 +87,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        font-weight: bold;
+        font-size:1.5rem;
+        color: white;
     }
     .service_content >.service_content_box>a >img{
         height: 80px;

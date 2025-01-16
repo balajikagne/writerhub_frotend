@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { courses } from "../components/data"; // Import courses from data.js
 
 const CoursePage = () => {
   const { courseId } = useParams(); // Extract courseId from the URL params
+  const headingRef = useRef(null); // Create a ref for the heading
+
+  // Scroll to the heading when the component is mounted
+  useEffect(() => {
+    if (headingRef.current) {
+      headingRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, []);
 
   // Find the course by courseId
   const course = courses.find((course) => course.id === parseInt(courseId));
@@ -14,7 +22,10 @@ const CoursePage = () => {
 
   return (
     <div>
-      <h1 style={{ textAlign: "center", marginBottom: "20px", fontFamily: "-moz-initial", color: "white" }}>
+      <h1
+        ref={headingRef} // Attach the ref to the heading
+        style={{ textAlign: "center", marginBottom: "20px", fontFamily: "-moz-initial", color: "white" }}
+      >
         {course.title}
       </h1>
       <div
