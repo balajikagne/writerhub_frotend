@@ -23,7 +23,7 @@ function NavBar() {
               <a href="/apply">Jobs</a>
             </li>
             <li>
-              <a href="/contactus">Contact</a>
+              <a href="/contactus">Contact Us</a>
             </li>
             <li>
               <a href="/about">About</a>
@@ -76,7 +76,7 @@ function NavBar() {
 
                 <a href="/Service">Services</a>
                 <a href="/apply">Jobs</a>
-                <a href="/contactus">Contact</a>
+                <a href="/contactus">Contact Us</a>
 
                 <a href="/about">About</a>
               </div>
