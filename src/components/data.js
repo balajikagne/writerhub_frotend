@@ -8,6 +8,7 @@ import sql from "../assets/sql_pre_photo.jpg"
 import css from "../assets/css_hand_notes.jpg"
 import java from "../assets/java_hadnwritten_notes.jpg"
 import mern from "../assets/full_stack_devlopment.png"
+import javab from "../assets/java_p_bnotes.jpg"
 export const data = {
   UniversityA: {
     image: sppu,
@@ -132,6 +133,15 @@ export const data1 = [
         image: sql, // Replace with actual image path
         description: "full handwritten sql notes Rs 59 /-",
         link:"https://drive.google.com/file/d/15ejCwi09G9tgZedE4zZO7vdWRP0J5Giu/view?usp=sharing",
+        buttons: {
+          actionButton: "Preview",
+          buyButton: "Buy Now",
+        },
+        {
+        name: "Notes 7",
+        image: javab, // Replace with actual image path
+        description: "java notes Rs 59 /-",
+        link:"https://drive.google.com/file/d/185W89FV065Tx84cuVMgx122cLVw1yDDU/view?usp=drivesdk",
         buttons: {
           actionButton: "Preview",
           buyButton: "Buy Now",
