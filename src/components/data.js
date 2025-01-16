@@ -8,6 +8,7 @@ import sql from "../assets/sql_pre_photo.jpg"
 import css from "../assets/css_hand_notes.jpg"
 import java from "../assets/java_hadnwritten_notes.jpg"
 import mern from "../assets/full_stack_devlopment.png"
+import javab from "../assets/Java_p_bnotes.jpg"
 export const data = {
   UniversityA: {
     image: sppu,
@@ -81,7 +82,7 @@ export const data1 = [
         name: "Notes 1",
         image: part_1_assi, // Replace with actual image path
         description: "Frontend (HTML, CSS, and JavaScript) Rs 19 /-",
-        link:"https://drive.google.com/file/d/1-RG6EWh7rqEYAi_OcQwdGmsdZbaKb6J4/view?usp=drivesdk",
+        link: "https://drive.google.com/file/d/1-RG6EWh7rqEYAi_OcQwdGmsdZbaKb6J4/view?usp=drivesdk",
         buttons: {
           actionButton: "Preview",
           buyButton: "Buy Now",
@@ -91,7 +92,7 @@ export const data1 = [
         name: "Notes 2",
         image: part_2_assi, // Replace with actual image path
         description: "Reactjs Part -1 Rs 19 /-",
-        link:"https://drive.google.com/file/d/11iE10PzOFVzivwgKfyvtJShRbsRVmJr3/view?usp=drivesdk",
+        link: "https://drive.google.com/file/d/11iE10PzOFVzivwgKfyvtJShRbsRVmJr3/view?usp=drivesdk",
         buttons: {
           actionButton: "Preview",
           buyButton: "Buy Now",
@@ -100,8 +101,8 @@ export const data1 = [
       {
         name: "Notes 3",
         image: javascript, // Replace with actual image path
-        description: "full javascript Rs 59 /-",
-        link:"https://drive.google.com/file/d/15tUQvvx3Sw4un7rUJfTN5abUTgo7LPgJ/view?usp=sharing",
+        description: "Full JavaScript Rs 59 /-",
+        link: "https://drive.google.com/file/d/15tUQvvx3Sw4un7rUJfTN5abUTgo7LPgJ/view?usp=sharing",
         buttons: {
           actionButton: "Preview",
           buyButton: "Buy Now",
@@ -110,8 +111,8 @@ export const data1 = [
       {
         name: "Notes 4",
         image: css, // Replace with actual image path
-        description: "full handwritten html css notes Rs 59 /-",
-        link:"https://drive.google.com/file/d/15qYE64i8rADKXv1WzhPgkpq2hCjD0k4G/view?usp=sharing",
+        description: "Full handwritten HTML CSS notes Rs 59 /-",
+        link: "https://drive.google.com/file/d/15qYE64i8rADKXv1WzhPgkpq2hCjD0k4G/view?usp=sharing",
         buttons: {
           actionButton: "Preview",
           buyButton: "Buy Now",
@@ -120,8 +121,8 @@ export const data1 = [
       {
         name: "Notes 5",
         image: java, // Replace with actual image path
-        description: "full handwritten java notes Rs 59 /-",
-        link:"https://drive.google.com/file/d/15eW5-sPbzUXbm4xDrJHYn8Ycip2FnmAQ/view?usp=sharing",
+        description: "Full handwritten Java notes Rs 59 /-",
+        link: "https://drive.google.com/file/d/15eW5-sPbzUXbm4xDrJHYn8Ycip2FnmAQ/view?usp=sharing",
         buttons: {
           actionButton: "Preview",
           buyButton: "Buy Now",
@@ -130,8 +131,18 @@ export const data1 = [
       {
         name: "Notes 6",
         image: sql, // Replace with actual image path
-        description: "full handwritten sql notes Rs 59 /-",
-        link:"https://drive.google.com/file/d/15ejCwi09G9tgZedE4zZO7vdWRP0J5Giu/view?usp=sharing",
+        description: "Full handwritten SQL notes Rs 59 /-",
+        link: "https://drive.google.com/file/d/15ejCwi09G9tgZedE4zZO7vdWRP0J5Giu/view?usp=sharing",
+        buttons: {
+          actionButton: "Preview",
+          buyButton: "Buy Now",
+        },
+      },
+      {
+        name: "Notes 7",
+        image: javab, // Replace with actual image path
+        description: "Java notes Rs 59 /-",
+        link: "https://drive.google.com/file/d/185W89FV065Tx84cuVMgx122cLVw1yDDU/view?usp=drivesdk",
         buttons: {
           actionButton: "Preview",
           buyButton: "Buy Now",
