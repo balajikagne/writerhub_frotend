@@ -6,6 +6,10 @@ import p3 from "../assets/cse-p-2-1.jpg";
 import p4 from "../assets/cse-p-2-2.jpg";
 import p5 from "../assets/cse-p-1-1.jpg";
 import p6 from "../assets/cse-p-1-2.jpg";
+import t1 from "../assets/t-1.png";
+import t2 from "../assets/t-2.png";
+import t3 from "../assets/t-3.png";
+import t4 from "../assets/t-4.png";
 import LoadingSpinner from "../components/LoadingSpinner"; // Assuming you have this component
 import "./ProjectData.css"; // Import the CSS file
 import ComingSoon from "../components/ComingSoon";
@@ -19,18 +23,29 @@ const cardData = [
     des: "your ultimate destination for beauty and relaxation. Our salon website is designed with a sleek, modern look using HTML, CSS, JavaScript, and ReactJS to provide a smooth and engaging user experience. Explore our range of services, from hair styling and skincare to makeup and spa treatments, all crafted to meet your unique needs.",
     img: p1,
     images: [p1, p5, p6],
-    price: 450,
+    price: 90,
     category: "websites",
   },
   {
     id: 2,
-    title: "E-commerce Website",
+    title: "Education Website",
     description:
       "Welcome to Educe, a fully interactive platform developed for education.",
     des: "Welcome to Education website, a fully interactive platform developed using PHP, HTML, CSS, and JavaScript. Our website combines dynamic backend functionality with a sleek, responsive front-end design to offer a seamless user experience across all devices.",
     img: p2,
     images: [p2, p3, p4],
-    price: 450,
+    price: 90,
+    category: "websites",
+  },
+  {
+    id: 3,
+    title: "ToDo List Website",
+    description:
+      "Welcome to ToDo, a fully interactive platform developed for your daily tag.",
+    des: "Welcome to ToDo website, a fully interactive platform developed using  HTML, CSS, and JavaScript. Our website combines responsive front-end design to offer a seamless user experience across all devices.",
+    img: t2,
+    images: [t1,t2,t3],
+    price: 90,
     category: "websites",
   },
 ];
