@@ -33,6 +33,7 @@ import MaterialForm from './Screen/MaterialForm';
 import CourseSelector from "./Screen//CourseSelector";
 import CoursePage from "./Screen/CoursePage";
 import LectureCard from "./Screen//LectureCard";
+import SeminarRegistration from './Screen/SeminarRegistration';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -81,6 +82,7 @@ function App() {
               <Route path="/" element={<CourseSelector />} />
         <Route path="/course/:courseId" element={<CoursePage />} />
         <Route path="/lecture/:lectureId" element={<LectureCard />} />
+        <Route path="/seminarform" element={<SeminarRegistration />} />
             </Routes>
             <Footer />
           </Router>
