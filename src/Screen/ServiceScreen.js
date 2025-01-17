@@ -6,6 +6,7 @@ import service2 from "../assets/internship_logo.png"
 import service3 from "../assets/project_c-Photoroom.png"
 import service4 from "../assets/notes_c-Photoroom.png"
 import service5 from "../assets/Design-Photoroom.png"
+import thumbnail from "../assets/workshop_thumbnail.jpg"
 function ServiceScreen() {
   return (
     <>
@@ -28,6 +29,10 @@ function ServiceScreen() {
             <div className="service_content_box">
             <a href="/courses"><img src={service5}></img></a>
             <h2>Lectures</h2>
+            </div>
+            <div className="service_content_box">
+            <a href="/seminarform"><img src={thumbnail}></img></a>
+            <h2>Seminar</h2>
             </div>
             <div className="service_content_box">
             <a href="/cm"><img src={service1}></img></a>
