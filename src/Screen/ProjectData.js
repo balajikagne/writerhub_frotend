@@ -10,6 +10,9 @@ import t1 from "../assets/t-1.png";
 import t2 from "../assets/t-2.png";
 import t3 from "../assets/t-3.png";
 import t4 from "../assets/t-4.png";
+import r1 from "../assets/r-1.jpg";
+import r2 from "../assets/r-2.jpg";
+import r3 from "../assets/r-3.jpg";
 import LoadingSpinner from "../components/LoadingSpinner"; // Assuming you have this component
 import "./ProjectData.css"; // Import the CSS file
 import ComingSoon from "../components/ComingSoon";
@@ -45,6 +48,17 @@ const cardData = [
     des: "Welcome to ToDo website, a fully interactive platform developed using  HTML, CSS, and JavaScript. Our website combines responsive front-end design to offer a seamless user experience across all devices.",
     img: t2,
     images: [t1,t2,t3],
+    price: 90,
+    category: "websites",
+  },
+  {
+    id: 4,
+    title: "Portfolio Website",
+    description:
+      "Welcome to Portfolio, a fully interactive platform developed for your daily tag.",
+    des: "Welcome to Portfolio website, a fully interactive platform developed using  HTML, CSS, and JavaScript. Our website combines responsive front-end design to offer a seamless user experience across all devices.",
+    img: r1,
+    images: [r1,r2,r3],
     price: 90,
     category: "websites",
   },
