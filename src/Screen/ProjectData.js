@@ -9,10 +9,11 @@ import p6 from "../assets/cse-p-1-2.jpg";
 import t1 from "../assets/t-1.png";
 import t2 from "../assets/t-2.png";
 import t3 from "../assets/t-3.png";
-import t4 from "../assets/t-4.png";
-import r1 from "../assets/r-1.jpg";
-import r2 from "../assets/r-2.jpg";
-import r3 from "../assets/r-3.jpg";
+import p11 from "../assets/p1.png";
+import p12 from "../assets/p2.png";
+import p13 from "../assets/p3.png";
+import p14 from "../assets/p4.png";
+
 import LoadingSpinner from "../components/LoadingSpinner"; // Assuming you have this component
 import "./ProjectData.css"; // Import the CSS file
 import ComingSoon from "../components/ComingSoon";
@@ -57,8 +58,8 @@ const cardData = [
     description:
       "Welcome to Portfolio, a fully interactive platform developed for your daily tag.",
     des: "Welcome to Portfolio website, a fully interactive platform developed using  HTML, CSS, and JavaScript. Our website combines responsive front-end design to offer a seamless user experience across all devices.",
-    img: r1,
-    images: [r1,r2,r3],
+    img: p11,
+    images: [p11,p12,p13,p14],
     price: 90,
     category: "websites",
   },
