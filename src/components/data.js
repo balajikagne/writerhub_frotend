@@ -167,7 +167,7 @@ export const courses = [
       { id: 4,image:mern, title: "html part - 3", link: "https://drive.google.com/file/d/16yahk2vKPMMfk7elscbQ7bJ561TK1Ll6/view?usp=drive_link" },
       { id: 5,image:mern, title: "html part - 4", link: "https://drive.google.com/file/d/17N3FzlqMc_4rrj4HkBEWAXdiDa0n3pn8/view?usp=drive_link" },
       { id: 6,image:mern, title: "html part - 5", link: "https://drive.google.com/file/d/19BXDVgEJOr6SEzFHG7AUfIXbmwpbb85R/view?usp=drive_link" },
-
+      { id: 7,image:mern, title: "html part - 6", link: "https://drive.google.com/file/d/19btagKCV0YPJvya2y57L9l2RysVnAtEd/view?usp=drivesdk" },
     ],
   },
   // {
