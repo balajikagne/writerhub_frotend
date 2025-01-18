@@ -9,6 +9,7 @@ import css from "../assets/css_hand_notes.jpg"
 import java from "../assets/java_hadnwritten_notes.jpg"
 import mern from "../assets/full_stack_devlopment.png"
 import javab from "../assets/Java_p_bnotes.jpg"
+import dsa from "../assets/dsa-photo.jpg"
 export const data = {
   UniversityA: {
     image: sppu,
@@ -143,6 +144,16 @@ export const data1 = [
         image: javab, // Replace with actual image path
         description: "Java notes Rs 59 /-",
         link: "https://drive.google.com/file/d/185W89FV065Tx84cuVMgx122cLVw1yDDU/view?usp=drivesdk",
+        buttons: {
+          actionButton: "Preview",
+          buyButton: "Buy Now",
+        },
+      },
+      {
+        name: "Notes 8",
+        image: dsa, // Replace with actual image path
+        description: "dsa notes Rs 69 /-",
+        link: "https://drive.google.com/file/d/19btagKCV0YPJvya2y57L9l2RysVnAtEd/view?usp=drivesdk",
         buttons: {
           actionButton: "Preview",
           buyButton: "Buy Now",
