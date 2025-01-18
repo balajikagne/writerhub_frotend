@@ -13,6 +13,10 @@ import p11 from "../assets/p1.png";
 import p12 from "../assets/p2.png";
 import p13 from "../assets/p3.png";
 import p14 from "../assets/p4.png";
+import c1 from "../assets/c1.png"
+import c2 from "../assets/c2.png"
+import c3 from "../assets/c3.png"
+import c4 from "../assets/c4.png"
 
 import LoadingSpinner from "../components/LoadingSpinner"; // Assuming you have this component
 import "./ProjectData.css"; // Import the CSS file
@@ -60,6 +64,17 @@ const cardData = [
     des: "Welcome to Portfolio website, a fully interactive platform developed using  HTML, CSS, and JavaScript. Our website combines responsive front-end design to offer a seamless user experience across all devices.",
     img: p11,
     images: [p11,p12,p13,p14],
+    price: 90,
+    category: "websites",
+  },
+  {
+    id: 5,
+    title: "Drivegallary Website",
+    description:
+      "Welcome to Drivegallary, a fully interactive platform developed for your daily tag.",
+    des: "Welcome to Drivegallary website, a fully interactive platform developed using  HTML, CSS, and JavaScript. Our website combines responsive front-end design to offer a seamless user experience across all devices.",
+    img: c1,
+    images: [c1,c2,c3,c4],
     price: 90,
     category: "websites",
   },
