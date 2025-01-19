@@ -27,6 +27,9 @@ function InternshipScreen() {
               <strong>Location : </strong><a href="https://maps.app.goo.gl/p2MEsM8b5e4yHyEx7">Click here</a>
             </p>
             <p>
+              <strong>Type : Remote</strong>
+            </p>
+            <p>
               Join our exciting <strong> internship program</strong> designed for students eager to gain{" "}
               <strong>real-world experience</strong> and enhance their skills. For just <strong>₹399</strong>, students will receive:
             </p>
