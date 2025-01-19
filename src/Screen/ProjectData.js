@@ -17,7 +17,10 @@ import c1 from "../assets/c1.png"
 import c2 from "../assets/c2.png"
 import c3 from "../assets/c3.png"
 import c4 from "../assets/c4.png"
-
+import buy1 from "../assets/buy1.png"
+import buy2 from "../assets/buy2.png"
+import buy3 from "../assets/buy3.png"
+import buy4 from "../assets/buy4.png"
 import LoadingSpinner from "../components/LoadingSpinner"; // Assuming you have this component
 import "./ProjectData.css"; // Import the CSS file
 import ComingSoon from "../components/ComingSoon";
@@ -75,6 +78,17 @@ const cardData = [
     des: "Welcome to Drivegallary website, a fully interactive platform developed using  HTML, CSS, and JavaScript. Our website combines responsive front-end design to offer a seamless user experience across all devices.",
     img: c1,
     images: [c1,c2,c3,c4],
+    price: 90,
+    category: "websites",
+  },
+  {
+    id: 6,
+    title: "Shoping Website",
+    description:
+      "Welcome to shoping, a fully interactive platform developed for your daily tag.",
+    des: "Welcome to shoping website, a fully interactive platform developed using  HTML, CSS, and JavaScript. Our website combines responsive front-end design to offer a seamless user experience across all devices.",
+    img: buy1,
+    images: [buy1,buy2,buy3,buy4],
     price: 90,
     category: "websites",
   },
