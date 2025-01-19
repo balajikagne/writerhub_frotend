@@ -107,6 +107,7 @@ const cardData = [
     price: 90,
     category: "websites",
   },
+  
 ];
 
 function ProjectData() {
@@ -170,6 +171,25 @@ function ProjectData() {
           Clear
         </button>
       </div>
+      <div className="applyServiceCard">
+  <h2>Apply for Website Services</h2>
+  <p>
+  🌟 Are you looking for a professional website but worried about the cost? <br></br>💰 Don’t worry! We create beautiful, high-quality websites tailored to your needs and budget. <br></br>🖥️✨  
+
+Whether it’s for your business, portfolio, or any idea, we can design a website just for you at an affordable price.<br></br> 🤝  
+
+💡 Let us help you turn your vision into reality without breaking the bank. Contact us today and take the first step towards your dream website! 🚀
+  </p>
+  <div className="buttons">
+    <a href="/contactus" className="button applyButton">
+      Contact Us
+    </a>
+    <a href="/meeting-schedule" className="button applyButton">
+      Schedule Meeting
+    </a>
+  </div>
+</div>
+
 
       {/* Display loading spinner */}
       {isLoading ? (

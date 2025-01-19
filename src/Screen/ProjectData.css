@@ -130,3 +130,49 @@
     margin: 10px 0;
   }
 }
+
+.applyServiceCard {
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+}
+
+.applyServiceCard h2 {
+  font-size: 1.8em;
+  color: #007BFF;
+  margin-bottom: 15px;
+}
+
+.applyServiceCard p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.applyServiceCard .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.applyButton {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.applyButton:hover {
+  background-color: #0056b3;
+}

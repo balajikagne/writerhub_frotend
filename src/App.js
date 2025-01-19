@@ -34,6 +34,7 @@ import CourseSelector from "./Screen//CourseSelector";
 import CoursePage from "./Screen/CoursePage";
 import LectureCard from "./Screen//LectureCard";
 import SeminarRegistration from './Screen/SeminarRegistration';
+import MeetIng from './Screen/MeetIng';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -83,6 +84,8 @@ function App() {
         <Route path="/course/:courseId" element={<CoursePage />} />
         <Route path="/lecture/:lectureId" element={<LectureCard />} />
         <Route path="/seminarform" element={<SeminarRegistration />} />
+        <Route path="/meeting-schedule" element={<MeetIng />} />
+
             </Routes>
             <Footer />
           </Router>
