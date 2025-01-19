@@ -21,7 +21,10 @@ function InternshipScreen() {
           <h1 style={styles.heading}>Betechnos Internship Registration</h1>
           <div style={styles.description}>
             <p>
-              <strong>Internship Opportunity</strong> at <strong>BeTechnos Private Limited</strong>
+              <strong>Internship Opportunity</strong> at <a href="https://www.betechnos.com" target="_blank">BeTechnos Private Limited</a>
+            </p>
+            <p>
+              <strong>Location : </strong><a href="https://maps.app.goo.gl/p2MEsM8b5e4yHyEx7">Click here</a>
             </p>
             <p>
               Join our exciting <strong>2-month internship program</strong> designed for students eager to gain{" "}
