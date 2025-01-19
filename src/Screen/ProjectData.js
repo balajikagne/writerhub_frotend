@@ -21,6 +21,10 @@ import buy1 from "../assets/buy1.png"
 import buy2 from "../assets/buy2.png"
 import buy3 from "../assets/buy3.png"
 import buy4 from "../assets/buy4.png"
+import sc1 from "../assets/sc1.png"
+import sc2 from "../assets/sc2.png"
+import sc3 from "../assets/sc3.png"
+import sc4 from "../assets/sc4.png"
 import LoadingSpinner from "../components/LoadingSpinner"; // Assuming you have this component
 import "./ProjectData.css"; // Import the CSS file
 import ComingSoon from "../components/ComingSoon";
@@ -89,6 +93,17 @@ const cardData = [
     des: "Welcome to shoping website, a fully interactive platform developed using  HTML, CSS, and JavaScript. Our website combines responsive front-end design to offer a seamless user experience across all devices.",
     img: buy1,
     images: [buy1,buy2,buy3,buy4],
+    price: 90,
+    category: "websites",
+  },
+  {
+    id: 7,
+    title: "Swimming class Website",
+    description:
+      "Welcome to Swimming class, a fully interactive platform developed for your daily tag.",
+    des: "Welcome to Swimming class website, a fully interactive platform developed using  HTML, CSS, and JavaScript. Our website combines responsive front-end design to offer a seamless user experience across all devices.",
+    img: sc1,
+    images: [sc1,sc2,sc3,sc4],
     price: 90,
     category: "websites",
   },
